@@ -1,0 +1,108 @@
+{
+  "manifest_version": 2,
+  "version": "3.2.5",
+  "name": "Mercurio Grabber",
+  "description": "Mercurio Grabber Extension",
+  "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_popup": "browser_action.html"
+  },
+
+  "options_page": "main.html",
+
+  "background": {
+    "persistent": true,
+    "scripts": [
+        "js/raven.min.js",
+        "js/constants.js",
+        "js/ws_grabber.js",
+        "js/salesnavigator-parser.js",
+        "js/background.js"
+    ]
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://grabber.mercurio.com; object-src 'self'",
+
+  "content_scripts": [
+      {
+          "matches": ["*://*.linkedin.com/uas/*", "*://*.linkedin.com/authwall*"],
+          "js": [
+              "js/constants.js",
+              "js/linkedin-uas.js"
+          ],
+          "run_at": "document_end"
+      },
+      {
+          "matches": ["*://*.linkedin.com/in/*", "*://*.linkedin.com/pub/*"],
+          "js": [
+              "js/constants.js",
+              "js/linkedin.js"
+          ],
+          "run_at": "document_end"
+      },
+      {
+          "matches": ["*://*.linkedin.com/sales/profile/*", "*://*.linkedin.com/sales/people/*"],
+          "js": [
+              "js/jquery-2.1.4.min.js",
+              "js/jquery-noconflict-loader.js"
+          ],
+          "run_at": "document_start"
+      },
+      {
+          "matches": ["*://*.linkedin.com/sales/profile/*"],
+          "js": [
+              "js/constants.js",
+              "js/data-extractors/salesnavigator-ui.js",
+              "js/linkedin-sales-navigator.js"
+          ],
+          "run_at": "document_end"
+      },
+      {
+          "matches": ["*://*.linkedin.com/sales/people/*"],
+          "js": [
+              "js/constants.js",
+              "js/data-extractors/salesnavigator-ms-ui.js",
+              "js/linkedin-sales-navigator.js"
+          ],
+          "run_at": "document_end"
+      },
+      {
+          "matches": ["*://*.linkedin.com/sales/salesLimitExceeded"],
+          "js": [
+              "js/constants.js",
+              "js/linkedin-sales-limit-exceeded.js"
+          ],
+          "run_at": "document_end"
+      }
+  ],
+
+  "permissions": [
+      "activeTab",
+      "tabs",
+      "storage",
+      "identity",
+      "identity.email",
+      "webRequest",
+      "https://accounts.google.com/*",
+      "https://www.googleapis.com/*",
+      "https://*.linkedin.com/*",
+      "http://*.google.com/*",
+      "https://*.google.com/*",
+      "http://*/*",
+      "https://*/*"
+  ],
+
+  "oauth2": {
+      "client_id": "107988663830-hfttojo5nm7h7tdpe5tg711n8t1ml3e9.apps.googleusercontent.com",
+      "scopes": ["https://www.googleapis.com/auth/drive"]
+  }
+}

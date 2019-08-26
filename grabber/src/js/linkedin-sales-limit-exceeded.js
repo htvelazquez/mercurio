@@ -1,0 +1,1 @@
+chrome.runtime.sendMessage({status: STATUS_LIMIT_EXCEEDED}, function (response) {});
