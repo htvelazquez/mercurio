@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Mercurio Grabber</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/browser_action.css">
+  </head>
+  <body>
+    <div id="header">
+      <span class="title"> <span class="in">in</span><span class="aware">Aware</span></span>
+      <div id="wifi-status" class="status">
+        <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+      </div>
+      <div id="user-status" class="status">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="container">
+      <div id="controls">
+        <button id="btn_resume" class="button" style="display:none;"><span class="glyphicon glyphicon glyphicon-play" aria-hidden="true"></span></button>
+        <button id="btn_pause" class="button" style="display:none;"><span class="glyphicon glyphicon glyphicon-pause" aria-hidden="true"></span></button>
+      </div>
+      <div id="counter-box">Pages visited today: <span id="counter"></span></div>
+    </div>
+    <div id="footer">
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/browser_action.js"></script>
+  </body>
+</html>
