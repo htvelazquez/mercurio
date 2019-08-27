@@ -292,6 +292,10 @@ h5,.h5{
 h6,.h6{
     font-size:1rem
 }
+i.beaux{
+    font-family: 'Dancing Script', cursive;
+    color: #F458B3
+}
 .lead{
     font-size:1.25rem;
     font-weight:300
