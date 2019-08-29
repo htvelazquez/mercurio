@@ -7,36 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="views/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="views/css/animate.css">
+    <link rel="stylesheet" href="views/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="views/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="views/css/magnific-popup.css">
+    <link rel="stylesheet" href="views/css/aos.css">
+    <link rel="stylesheet" href="views/css/ionicons.min.css">
+    <link rel="stylesheet" href="views/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="views/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="views/css/flaticon.css">
+    <link rel="stylesheet" href="views/css/icomoon.css">
+    <link rel="stylesheet" href="views/css/style.css">
 
 
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon//manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="views/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="views/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="views/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="views/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="views/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="views/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="views/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="views/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="views/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="views/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="views/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="views/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="views/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="views/images/favicon//manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="views/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
 </head>
@@ -71,7 +71,7 @@
                     <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#contact-us" class="btn btn-primary px-4 py-3">GET MORE INFO</a></p>
                 </div>
                 <div class="one-half align-self-md-end align-self-sm-center">
-                  <img src="images/dashboard_full_1.png" class="img-fluid img mx-auto d-block" alt="">
+                  <img src="views/images/dashboard_full_1.png" class="img-fluid img mx-auto d-block" alt="">
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                         <div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
                             <div class="d-md-flex">
                                 <div class="one-forth align-self-center">
-                                    <img src="images/applications.jpg" class="img-fluid border" alt="">
+                                    <img src="views/images/applications.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half ml-md-5 align-self-center">
                                     <h2 class="mb-4">Applications</h2>
@@ -110,7 +110,7 @@
                         <div class="tab-pane fade" id="v-pills-performance" role="tabpanel" aria-labelledby="v-pills-performance-tab">
                             <div class="d-md-flex">
                                 <div class="one-forth order-last align-self-center">
-                                    <img src="images/benefits.jpg" class="img-fluid border" alt="">
+                                    <img src="views/images/benefits.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half order-first mr-md-5 align-self-center">
                                     <h2 class="mb-4">Exclusive benefits</h2>
@@ -121,7 +121,7 @@
                         <div class="tab-pane fade" id="v-pills-effect" role="tabpanel" aria-labelledby="v-pills-effect-tab">
                             <div class="d-md-flex">
                                 <div class="one-forth align-self-center">
-                                    <img src="images/specs.jpg" class="img-fluid border" alt="">
+                                    <img src="views/images/specs.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half ml-md-5 align-self-center">
                                     <h2 class="mb-4">Technical specifications</h2>
@@ -359,18 +359,26 @@
                </div-->
                <div class="row block-9">
                    <div class="col-md-12 pr-md-5">
-                       <form action="#">
+                       <div id="formSuccess" class="alert alert-success hidden">
+                           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                           <strong>Success!</strong> Your message were sent.
+                       </div>
+                       <div id="formFail" class="alert alert-warning hidden">
+                           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                           <strong>Error!</strong> Your message weren't sent, please try again.
+                       </div>
+                       <form id="contactForm" action="/contact" method="POST">
                            <div class="form-group">
-                               <input type="text" class="form-control" placeholder="Your Name">
+                               <input name="name" type="text" required class="form-control" placeholder="Your Name">
                            </div>
                            <div class="form-group">
-                               <input type="text" class="form-control" placeholder="Your Email">
+                               <input name="email" type="email" required class="form-control" placeholder="Your Email">
                            </div>
                            <div class="form-group">
-                               <input type="text" class="form-control" placeholder="Subject">
+                               <input name="subject" type="text" required class="form-control" placeholder="Subject">
                            </div>
                            <div class="form-group">
-                               <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                               <textarea name="message" required cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
                            </div>
                            <div class="form-group">
                                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -423,22 +431,47 @@
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
         </svg>
     </div>
-    <script src="js/jquery.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/popper.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.easing.1.3.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.waypoints.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.stellar.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/owl.carousel.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.magnific-popup.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/aos.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.animateNumber.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/scrollax.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/google-map.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/main.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
 
-    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="dc5be274a79aa330cd99d5a3-|49" defer=""></script>
+    <script src="views/js/jquery.min.js" type="text/javascript"></script>
+    <script src="views/js/jquery-migrate-3.0.1.min.js" type="text/javascript"></script>
+    <script src="views/js/popper.min.js" type="text/javascript"></script>
+    <script src="views/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="views/js/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="views/js/jquery.waypoints.min.js" type="text/javascript"></script>
+    <script src="views/js/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="views/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="views/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="views/js/aos.js" type="text/javascript"></script>
+    <!-- script src="views/js/jquery.animateNumber.min.js" type="text/javascript"></script-->
+    <script src="views/js/scrollax.min.js" type="text/javascript"></script>
+    <!-- script src="views/js/google-map.js" type="text/javascript"></script -->
+    <script src="views/js/main.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $("#formSuccess, #formFail").hide();
+
+            $('#contactForm').submit( function(e) {
+                e.preventDefault();
+                $.ajax( {
+                    type: "POST",
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function( response ) {
+                        console.log( response );
+                        $("#formSuccess").slideDown();
+                        $('#contactForm').trigger("reset");
+                    },
+                    error: function() {
+                        $("#formFail").slideDown();
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="|49" defer=""></script>
 </body>
 
 </html>
