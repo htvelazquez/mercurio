@@ -29,13 +29,12 @@ class UniqueSalesforceId implements Rule
      */
     public function passes($attribute, $value)
     {
-        $contactBySId = Contact::where('salesforce_id', $value)->first();
-        $contactByLId = Contact::where('external_id', $this->lId)->first();
+        $contactByLId = Contact::where('linkedin_id', $this->lId)->first();
 
         $slackTitle = '*Sniffer* [_UniqueSalesforceId Rule Fail_]  ';
         if (empty($contactByLId)) {
             // New
-            if (empty($value) || empty($contactBySId)) {
+            if (empty($value)) {
                 return true;
             }
 
@@ -43,20 +42,13 @@ class UniqueSalesforceId implements Rule
             $attachmentContent = 'salesforce_id taken `' . $value . '`';
         } else {
             // Update
-            if (empty($contactByLId->salesforce_id) && (empty($contactBySId) || empty($value))) {
-                return true;
-            } elseif (!empty($contactBySId) && $contactByLId->id == $contactBySId->id) {
+            if (empty($value)) {
                 return true;
             }
-
             $attachmentTitle = 'Trying to update a Contact (LinkedinId = ' . $this->lId . ')';
-            $attachmentContent = 'salesforce_id = `' . (empty($contactByLId->salesforce_id) ? 'NULL' : $contactByLId->salesforce_id) . '` by new salesforce_id = `' . $value . '`';
-            if (!empty($contactBySId) && $contactByLId->id != $contactBySId->id) {
-                $attachmentContent .= ' (salesforce_id was taken)';
-            }
         }
 
-        (new Contact)->notify(new Slack($slackTitle, $attachmentTitle, $attachmentContent));
+        // (new Contact)->notify(new Slack($slackTitle, $attachmentTitle, $attachmentContent));
         return false;
     }
 

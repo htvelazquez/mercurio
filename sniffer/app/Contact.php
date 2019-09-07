@@ -10,11 +10,9 @@ class Contact extends Model
     use Notifiable;
 
     protected $fillable = [
-        'external_id',
-        'has_worked_at_client',
+        'linkedin_id',
         'created_at',
-        'updated_at',
-        'salesforce_id'
+        'updated_at'
     ];
 
     public function routeNotificationForSlack()
