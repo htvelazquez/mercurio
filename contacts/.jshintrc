@@ -1,0 +1,28 @@
+{
+	"undef": true,
+	"unused": true,
+
+	"bitwise": true,
+	"curly": true,
+	"eqeqeq": true,
+	"strict": true,
+	"evil": false,
+	"quotmark": "single",
+
+	"browser": true,
+
+	"predef": [
+		"console",
+		"chrome",
+		"require",
+		"stream"
+	],
+	"globals": {
+		"LinkedinProfileData": true,
+		"sfdcAuth": true,
+		"remoteConfig": true,
+		"deleteInLocalStorage": true,
+		"initOauth": true,
+		"jQueryScraper": true
+	}
+}

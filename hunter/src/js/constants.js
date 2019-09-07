@@ -1,0 +1,51 @@
+// App
+const APP_RUNNING = "_app_running_";
+const APP_PAUSE = "_app_pause_";
+const APP_WAITING = "_app_waiting_";
+// add waiting status con local storage
+
+// Task
+const TASK_READY = "_task_ready_";
+const TASK_RUNNING_COMPANY = "_task_running_company_";
+const TASK_RUNNING_SEARCH = "_task_running_search_";
+const TASK_RUNNING_EMPLOYEES = "_task_running_employees_";
+const TASK_DONE = "_task_done_";
+
+// Company
+const COMPANY_READY = "_company_ready_";
+const COMPANY_RUNNING = "_company_running_";
+const COMPANY_TIMEOUT = "_company_timeout_";
+const COMPANY_DONE = "_company_done_";
+
+// Search
+const SEARCH_READY = "_search_ready_";
+const SEARCH_RUNNING = "_search_running_";
+const SEARCH_TIMEOUT = "_search_timeout_";
+const SEARCH_DONE = "_search_done_";
+
+// Employee
+const EMPLOYEE_READY = "_employee_ready_";
+const EMPLOYEE_RUNNING = "_employee_running_";
+const EMPLOYEE_TIMEOUT = "_employee_timeout_";
+const EMPLOYEE_DONE = "_employee_done_";
+
+// Message
+MESSAGE_COMPANY_DONE = "_message_company_done_";
+MESSAGE_SEARCH_DONE = "_message_search_done_";
+MESSAGE_SEARCH_CHECK = "_message_search_check_";
+MESSAGE_EMPLOYEE_DONE = "_message_employee_done_";
+MESSAGE_APP_AUTH_ERROR = "_message_app_auth_error_";
+
+// Timeout limits
+const APP_TIMEOUT_LIMIT = 30000;
+const COMPANY_TIMEOUT_LIMIT = 7000;
+const SEARCH_TIMEOUT_LIMIT = 10000;
+const SEARCH_PAGES_LIMIT = 4;
+const SEARCH_ITEM_BY_PAGE = 25;
+const EMPLOYEE_TIMEOUT_LIMIT = 15000;
+const DEFAULT_SEARCH_KEYWORDS = 'crmContacts=EXCLUDE&logHistory=true&titleIncluded=%2522cmo%2522%2520OR%2520%2522adword%2522%2520OR%2520%2522ppc%2522%2520OR%2520%2522sem%2522%2520OR%2520%2522doubleclick%2522%2520OR%2520%2522google%2520plas%2522%2520OR%2520%2522google%2520shopping%2522%2520OR%2520%2522kenshoo%2522%2520OR%2520%2522pay%2520per%2520click%2522%2520OR%2520%2522product%2520listing%2520ads%2522%2520OR%2520%2522search%2520ads%2522%2520OR%2520%2522shopping%2520ads%2522%2520OR%2520%2522shopping%2520plas%2522%2520OR%2520%2522paid%2520search%2522%2520OR%2520%2522search%2520engine%2520advertising%2522%2520OR%2520%2522campagnes%2520digitals%2522%2520OR%2520%2522campa%25C3%25B1as%2520digitales%2522%2520OR%2520%2522campanhas%2520digitais%2522%2520OR%2520%2522canais%2520digitais%2522%2520OR%2520%2522demand%2520gen%2522%2520OR%2520%2522digital%2520campaign%2522%2520OR%2520%2522digitale%2520kampagnen%2522%2520OR%2520%2522e%2520commerce%2522%2520OR%2520%2522ecommerce%2522%2520OR%2520%2522e-commerce%2522%2520OR%2520%2522inova%25C3%25A7%25C3%25A3o%2520digital%2522%2520OR%2520%2522online%2520acquisition%2522%2520OR%2520%2522online%2520advertising%2522%2520OR%2520%2522paid%2520advertising%2522%2520OR%2520%2522paid%2520media%2522%2520OR%2520%2522transforma%25C3%25A7%25C3%25A3o%2520digital%2522%2520OR%2520%2522user%2520acquisition%2522%2520OR%2520%2522campa%25C3%25B1a%2520digital%2522%2520OR%2520%2522campanha%2520digital%2522%2520OR%2520%2522publicidad%2520digital%2522%2520OR%2520(vp%2520AND%2520marketing)%2520OR%2520(vp%2520AND%2520growth)%2520OR%2520(vp%2520AND%2520acquisition)%2520OR%2520(vp%2520AND%2520advertising)%2520OR%2520(vp%2520AND%2520demand%2520gen)%2520OR%2520(president%2520AND%2520marketing)%2520OR%2520(president%2520AND%2520growth)%2520OR%2520(president%2520AND%2520acquisition)%2520OR%2520(president%2520AND%2520advertising)%2520OR%2520(president%2520AND%2520demand%2520gen)%2520OR%2520(director%2520AND%2520marketing)%2520OR%2520(director%2520AND%2520growth)%2520OR%2520(director%2520AND%2520acquisition)%2520OR%2520(director%2520AND%2520advertising)%2520OR%2520(director%2520AND%2520demand%2520gen)%2520OR%2520(head%2520AND%2520marketing)%2520OR%2520(head%2520AND%2520growth)%2520OR%2520(head%2520AND%2520acquisition)%2520OR%2520(head%2520AND%2520advertising)%2520OR%2520(head%2520AND%2520demand%2520gen)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522digital%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522biddable%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522search%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522internet%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522automation%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522online%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522paid%2520channel%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522performance%2522)%2520OR%2520(%2522marketing%2522%2520AND%2520%2522chief%2522)%2520AND%2520(NOT%2520%2522dean%2522%2520NOT%2520%2522aprendi%2522%2520NOT%2520%2522architect%2522%2520NOT%2520%2522arquitect%2522%2520NOT%2520%2522asistente%2520del%2522%2520NOT%2520%2522assistant%2520to%2522%2520NOT%2520%2522athlete%2522%2520NOT%2520%2522atleta%2522%2520NOT%2520%2522business%2520owner%2522%2520NOT%2520%2522candidat%2522%2520NOT%2520%2522catedratico%2522%2520NOT%2520%2522conseiller%2522%2520NOT%2520%2522consult%2522%2520NOT%2520%2522data%2520acquisition%2522%2520NOT%2520%2522decano%2522%2520NOT%2520%2522doyen%2522%2520NOT%2520%2522educat%2522%2520NOT%2520%2522engineer%2522%2520NOT%2520%2522entrena%2522%2520NOT%2520%2522estudiante%2522%2520NOT%2520%2522etudiant%2522%2520NOT%2520%2522facult%2522%2520NOT%2520%2522franchise%2520owner%2522%2520NOT%2520%2522freelance%2522%2520NOT%2520%2522free-lance%2522%2520NOT%2520%2522ingeniero%2522%2520NOT%2520%2522instruct%2522%2520NOT%2520%2522logiciel%2522%2520NOT%2520%2522mentor%2522%2520NOT%2520%2522pa%2520to%2522%2520NOT%2520%2522ea%2520to%2522%2520NOT%2520%2522pasante%2522%2520NOT%2520%2522president%27s%2522%2520NOT%2520%2522profesor%2522%2520NOT%2520%2522professeur%2522%2520NOT%2520%2522professor%2522%2520NOT%2520%2522recruit%2522%2520NOT%2520%2522recrut%2522%2520NOT%2520%2522research%2522%2520NOT%2520%2522scholar%2522%2520NOT%2520%2522stude%2522%2520NOT%2520%2522teach%2522%2520NOT%2520%2522traine%2522%2520NOT%2520%2522tutor%2522%2520NOT%2520%2522talen%2522)';
+
+// Hunter Webservice
+// HUNTER_URL
+const HUNTER_URL = 'https://hunter-jobs.mercurio.com/api/extension';
+//const HUNTER_URL = 'http://localhost:8019/api/extension';

@@ -1,0 +1,62 @@
+{
+    "manifest_version": 2,
+    "version": "0.1.0",
+    "name": "Cirenio Contacts Solutions",
+    "description": "This extension shows contact information for the current LinkedIn Profile",
+
+    "web_accessible_resources": [
+        "js/qm_content_script.js",
+        "js/remoteConfig.js",
+        "oauth2/oauth2.html"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["*://www.linkedin.com/*"],
+            "js":["js/jquery-2.1.4.min.js", "js/jquery-noconflict-loader.js"],
+            "run_at": "document_start"
+        },
+        {
+            "matches": ["*://www.linkedin.com/*"],
+            "js":[
+                "js/remoteConfig.js",
+                "js/data-extractors/linkedin-ui.js",
+                "js/data-extractors/salesnavigator-ui.js",
+                "js/data-extractors/salesnavigator-ms1-ui.js",
+                "js/data-extractors/microsoft-ui.js",
+                "js/storage.js",
+                "js/scraper-helper.js",
+                "js/web-services.js",
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval' http://contacts.cirenio.com; object-src 'self'",
+
+    "background": {
+        "scripts": ["js/remoteConfig.js", "js/salesnavigator-parser.js", "event.js"]
+    },
+
+    "page_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Check Profile"
+    },
+
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "identity",
+        "identity.email",
+        "activeTab",
+        "<all_urls>",
+        "tabs",
+        "declarativeContent",
+        "notifications",
+        "storage",
+        "*://*/*",
+        "http://contacts.cirenio.com"
+    ]
+}

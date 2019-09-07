@@ -1,0 +1,61 @@
+{
+  "manifest_version": 2,
+  "version": "1.0.4",
+  "name": "Mercurio Hunter",
+  "description": "Mercurio Hunter Extension",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+},
+  "options_page": "main.html",
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "js/constants.js",
+      "js/data-extractors/sales-navigator-ui.js",
+      "js/ws_hunter.js",
+      "js/background.js"
+    ]
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://hunter.mercurio.com; object-src 'self'",
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/uas/*", "*://*.linkedin.com/authwall*", "*://*.linkedin.com/m/login/","https://www.linkedin.com/sales/login"],
+      "js": [
+        "js/constants.js",
+        "js/linkedin-uas.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://*.linkedin.com/sales/search/people/list/employees-for-account/*"
+      ],
+      "js": [
+          "js/constants.js",
+          "js/linkedin-search.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+      "tabs",
+      "storage",
+      "identity",
+      "identity.email",
+      "webRequest",
+      "debugger",
+      "https://accounts.google.com/*",
+      "https://www.googleapis.com/*",
+      "https://*.linkedin.com/*",
+      "http://*.google.com/*",
+      "https://*.google.com/*",
+      "http://*/*",
+      "https://*/*"
+  ],
+  "oauth2": {
+      "client_id": "107988663830-hfttojo5nm7h7tdpe5tg711n8t1ml3e9.apps.googleusercontent.com",
+      "scopes": ["https://www.googleapis.com/auth/drive"]
+  }
+}
