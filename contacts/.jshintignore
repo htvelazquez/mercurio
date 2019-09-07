@@ -1,0 +1,8 @@
+src/js/bootstrap.min.js
+src/bootstrap.min.js
+src/js/jquery-2.1.4.min.js
+src/js/loadingoverlay.min.js
+src/oauth2/*.js
+src/oauth2/*/*.js
+src/js/npm.js
+jquery-noconflict-loader.js

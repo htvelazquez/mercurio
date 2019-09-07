@@ -212,8 +212,7 @@ class AlertsController extends Controller
                     $dataCsv = [
                         $line->id,
                         $line->status,
-                        $line->snapshot->contact->salesforce_id,
-                        $line->snapshot->contact->external_id,
+                        $line->snapshot->contact->linkedin_id,
                         $line->after_metadata->name,
                         $line->after_metadata->location->label,
                         $line->snapshot->priority,
