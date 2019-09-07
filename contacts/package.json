@@ -1,0 +1,23 @@
+{
+  "name": "packer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "jshint src/."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "gulp-bump": "^2.9.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-string-replace": "^0.3.1",
+    "gulp-zip": "^3.2.0",
+    "semver": "^5.5.1",
+    "yargs": "^6.6.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
