@@ -29,10 +29,10 @@ class StoreSnapshot extends FormRequest
     public function rules()
     {
         return [
-            'lId' => 'required',
+            'id' => 'required',
             'fullExperience' => 'required|array',
             'fullExperience.*.jobTitle' => 'required',
-            'priority' => 'required',
+            // 'priority' => 'required',
             'salesforceId' => [new UniqueSalesforceId($this->input('lId'))]
         ];
     }
@@ -55,8 +55,7 @@ class StoreSnapshot extends FormRequest
     public function messages()
     {
         $messages = [
-            "lId.required" => "The lId field is required.",
-            "priority"     => "The priority field is required.",
+            "id.required" => "The linkedin_id field is required."
         ];
 
         if (!empty($this->input('fullExperience'))) {

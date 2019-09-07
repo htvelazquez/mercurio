@@ -1,0 +1,314 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+    <head>
+        <title>Cirenio contacts</title>
+        <style>
+            body {
+                width: 350px;
+                height: auto;
+                /*padding: 30px;*/
+                /*padding-top: 10px;*/
+                /*white-space:nowrap;*/
+            }
+            .nobr	{ white-space:nowrap; }
+            #contact-form{
+                padding: 5px;
+            }
+            .form-inline{
+                padding-bottom: 10px;
+            }
+            #account-div label{
+                text-align: left;
+            }
+            /*#account-list span:hover, #email-options p:hover{*/
+                /*background-color: #2aabd2;*/
+            /*}*/
+            #contact-form .clickable, #email-options p, #account-list span{
+                cursor: pointer;
+            }
+            /*#contact-form .clickable:hover{*/
+                /*background-color: #2aabd2;*/
+            /*}*/
+            @-webkit-keyframes opacity {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+            @-moz-keyframes opacity {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+
+            .loading {
+                text-align: left;
+                margin: 100px 0 0 0;
+            }
+
+            .loading span {
+                -webkit-animation-name: opacity;
+                -webkit-animation-duration: 1s;
+                -webkit-animation-iteration-count: infinite;
+
+                -moz-animation-name: opacity;
+                -moz-animation-duration: 1s;
+                -moz-animation-iteration-count: infinite;
+            }
+
+            .loading span:nth-child(2) {
+                -webkit-animation-delay: 100ms;
+                -moz-animation-delay: 100ms;
+            }
+
+            .loading span:nth-child(3) {
+                -webkit-animation-delay: 300ms;
+                -moz-animation-delay: 300ms;
+            }
+            input, span, #account-list, .help-block, #email-options{
+                max-width: 100%;
+                text-align: center;
+            }
+
+            p{
+                padding: inherit;
+            }
+
+            #upload-button {
+              color:#fff;
+              background:#24bdc9;
+              border:none;
+              padding-top:.5rem;
+              padding-bottom:.5rem;
+              padding-left:20px;
+              padding-right:20px;
+              margin-top:6px;
+              -webkit-border-radius:6px;
+              border-radius:6px;
+            }
+
+            #upload-button:hover {
+              background:#1fa4ad;
+            }
+
+            #upload-button:disabled {
+              opacity: 0.6;
+              cursor: not-allowed;
+            }
+
+            #app-header {
+              text-align:center;
+              background:-webkit-linear-gradient(-45deg,#2ebdc4 0%,#68e5b2 100%);
+              margin:0 0 10px;
+              padding:10px 0;
+              color:#FFF;
+            }
+
+        </style>
+
+        <script src="js/remoteConfig.js"></script>
+
+        <script src="js/storage.js"></script>
+        <script src="oauth2/oauth2.js"></script>
+        <script src="js/init.js"></script>
+
+        <script src="js/web-services.js"></script>
+        <script src="popup.js"></script>
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/loadingoverlay.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="screen">
+    </head>
+    <body>
+        <h4 id="app-header" ><b style="font-size:26px" >Cirenio</b> contacts</h4>
+
+        <form class="form-inline" id="contact-form">
+            <div id="name-div">
+                <div class="form-group-sm row" style="margin-bottom: 8px;">
+                    <label class="control-label col-xs-4" style="margin-top:6px" for="firstname"><i class="fa fa-user" aria-hidden="true"></i> First Name</label>
+                    <div class="col-xs-7" style="padding:2px">
+                        <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="firstname">
+                    </div>
+                </div>
+                <div class="form-group-sm row" style="margin-bottom: 8px;">
+                    <label class="control-label col-xs-4" style="margin-top:6px" for="lastname"><i class="fa fa-user" aria-hidden="true"></i> Last Name</label>
+                    <div class="col-xs-7" style="padding: 2px">
+                        <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="lastname">
+                    </div>
+                </div>
+                <p class="help-block loading"></p>
+            </div>
+
+            <div id='account-div' class="form-group-sm row" style="margin-bottom: 8px;">
+                <input type="text" id="accountid" hidden>
+                <label class="control-label col-xs-4" style="margin-top:6px" for="accountname"><i class="fa fa-building" aria-hidden="true"></i> Company</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="text" class="form-control input-sm" style="border-left:none; border-top:none; border-right:none;" id="accountname" placeholder="Account" disabled>
+                </div>
+                <div style="position: absolute;right: 5px;top: auto;padding-top: 10px">
+                    <span style="color: yellowgreen; display: none" class="glyphicon glyphicon-ok" hidden></span>
+                    <span style="color: gold; display: none" class="glyphicon glyphicon-question-sign" hidden></span>
+                    <span style="color: red; display: none" class="glyphicon glyphicon-remove" hidden></span>
+                </div>
+                <div class="row col-xs-12">
+                    <p class="loading help-block" style="float:left; margin-left:10px; padding:0 0 0 15px;width: 100%;" hidden></p>
+                </div>
+            </div>
+
+            <div hidden id='account-search' style="margin-bottom:10px; margin-left:15px; padding-left:5px; border-left:1px solid #CCC;" class="form-group-sm row" style="margin-bottom: 8px;">
+                <div class="col-xs-3">
+                    <label class="control-label" for="accountsearch-term">Search</label>
+                </div>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="accountsearch-term" placeholder="Search for Accounts">
+                </div>
+                <div class="col-xs-1" style="padding: 0px;padding-top: 10px">
+                    <a href="#" data-toggle="tooltip" data-placement="left" data-animation="false" data-delay="0" title="Search for Accounts">
+                        <span class="glyphicon glyphicon-search" id='search-button'></span>
+                    </a>
+                </div>
+                <!--<button type="button" id='search-button' class="btn btn-primary">Search</button>-->
+                <div style="margin-top: 10px;" id="account-list" hidden></div>
+                <div class="row col-xs-12">
+                    <p class="loading help-block" hidden></p>
+                </div>
+            </div>
+
+            <div id='title-div' class="form-group-sm row" style="margin-bottom: 8px;">
+                <label class="control-label col-xs-4" style="margin-top:6px" for="title"><i class="fa fa-briefcase" aria-hidden="true"></i> Job Title</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="title" placeholder="Job Title">
+                </div>
+                <div style="position: absolute;right: 5px;top: auto;padding-top: 10px">
+                    <span style="color: yellowgreen; display: none" class="glyphicon glyphicon-ok" hidden></span>
+                    <span style="color: gold; display: none" class="glyphicon glyphicon-question-sign" hidden></span>
+                </div>
+                <div class="row col-xs-12">
+                    <p class="loading help-block" hidden></p>
+                </div>
+            </div>
+
+            <div id='email-div' class="form-group-sm row" style="margin-bottom: 8px;">
+                <input type="text" hidden id="emaildomain">
+                <label class="control-label col-xs-4" style="margin-top:6px" for="emailguess"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="emailguess" placeholder="Contact Email">
+                    <input type="hidden" id="newemail" value="false">
+                </div>
+                <div id="email-tips" style="position: absolute;right: 5px;top: auto;padding-top: 10px">
+                    <span style="color: yellowgreen; display: none" class="glyphicon glyphicon-ok" hidden></span>
+                    <a href="#" data-toggle="tooltip" data-placement="left" data-animation="false" data-delay="0" title="No SFDC Email. Click to Show More Options. Default account format will be used if empty">
+                        <span style="color: gold; display: none" class="glyphicon glyphicon-question-sign" hidden></span>
+                    </a>
+                    <a href="#" data-toggle="tooltip" data-placement="left" data-animation="false" data-delay="0" title="Bounced Email. Click to Show More Options.">
+                        <span style="color: red; display: none" class="glyphicon glyphicon-exclamation-sign" hidden></span>
+                    </a>
+                </div>
+                <p class="help-block loading" hidden></p>
+            </div>
+
+            <div hidden id="email-options" style="margin-top: 15px">
+                <p method="linkedin" hidden></p>
+                <p method="salesforce" hidden></p>
+                <p method="suggested" hidden></p>
+                <!--p method="guess" id='guess-button' hidden>Try to Guess with QM Tool</p-->
+                <p method="loading" style="text-align: center;">
+                    <img src="images/loader.gif" alt="loading" />
+                </p>
+
+                <p method="nothing" hidden>
+                    - No emails -
+                </p>
+            </div>
+
+            <div id='twitter-div' class="form-group-sm row" style="margin-bottom: 8px;">
+                <label class="control-label col-xs-4" style="margin-top:6px" for="twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="twitter" placeholder="Twitter account">
+                </div>
+                <div style="position: absolute;right: 5px;top: auto;padding-top: 10px">
+                    <span style="color: yellowgreen; display: none" class="glyphicon glyphicon-ok" hidden></span>
+                    <a href="#">
+                        <span style="color: gold; display: none" class="glyphicon glyphicon-question-sign" hidden></span>
+                    </a>
+                </div>
+                <div class="row col-xs-12">
+                    <p class="loading help-block" hidden style="display:none"></p>
+                </div>
+            </div>
+
+            <div id='website-div' class="form-group-sm row" style="margin-bottom: 8px;">
+                <label class="control-label col-xs-4" style="margin-top:6px" for="website"><i class="fa fa-globe" aria-hidden="true"></i> Website</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="website" placeholder="Website">
+                </div>
+                <div style="position: absolute;right: 5px;top: auto;padding-top: 10px">
+                    <span style="color: yellowgreen; display: none" class="glyphicon glyphicon-ok" hidden></span>
+                    <a href="#">
+                        <span style="color: gold; display: none" class="glyphicon glyphicon-question-sign" hidden></span>
+                    </a>
+                </div>
+                <div class="row col-xs-12">
+                    <p class="loading help-block" hidden style="display:none"></p>
+                </div>
+            </div>
+
+            <div id='birthday-div' class="form-group-sm row" style="margin-bottom: 8px;">
+                <label class="control-label col-xs-4" style="margin-top:6px" for="birthday"><i class="fa fa-calendar" aria-hidden="true"></i> Birthday</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="date" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm input-sm" id="birthday" placeholder="Birthday">
+                </div>
+                <div style="position: absolute;right: 5px;top: auto;padding-top: 10px">
+                    <span style="color: yellowgreen; display: none" class="glyphicon glyphicon-ok" hidden></span>
+                    <a href="#">
+                        <span style="color: gold; display: none" class="glyphicon glyphicon-question-sign" hidden></span>
+                    </a>
+                </div>
+                <div class="row col-xs-12">
+                    <p class="loading help-block" hidden style="display:none"></p>
+                </div>
+            </div>
+
+            <!--div id='phone-div' class="form-group-sm row" style="margin-bottom: 8px;">
+                <label class="control-label col-xs-4" style="margin-top:6px" for="phone"><i class="fa fa-phone" aria-hidden="true"></i> Phone</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="form-control input-sm" id="phone" placeholder="Phone">
+                </div>
+                <div style="position: absolute;right: 5px;top: auto;padding-top: 10px">
+                    <span style="color: yellowgreen; display: none" class="glyphicon glyphicon-ok" hidden></span>
+                    <a href="#">
+                        <span style="color: gold; display: none" class="glyphicon glyphicon-question-sign" hidden></span>
+                    </a>
+                </div>
+                <div class="row col-xs-12">
+                    <p class="loading help-block" hidden style="display:none"></p>
+                </div>
+            </div-->
+
+            <!-- div id="relevance-div" class="form-group-sm row" style="margin-bottom: 8px;">
+                <label class="control-label col-xs-4" style="margin-top:6px" for="relevance"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Relevance</label>
+                <div class="col-xs-7" style="padding: 2px">
+                    <select name="relevance" class="form-control input-sm" style="border-top:none; border-right:none; border-left:none;">
+                        <option value=""  selected="selected" disabled>Select an option...</option>
+                        <option value="0 - Priority Contact">Priority Contact</option>
+                        <option value="1 - PSR">PSR</option>
+                        <option value="2 - C-Level Executive">C-Level Executive</option>
+                        <option value="3 - Generic">Generic</option>
+                        <option value="4 - None">None</option>
+                    </select>
+                </div>
+            </div -->
+
+            <button id="upload-button" class="btn btn-primary hidden">Push contact</button>
+        </form>
+        <div id="status" style="margin: 5px 0 0;width: auto;padding: 5px;" class="alert-warning" hidden></div>
+
+        <!--a style="float:right; margin:5px;" href="" target="_blank">Suggestions?</a>
+        <a style="float:right; margin:5px;" href="" target="_blank">Report an error</a-->
+    </body>
+</html>

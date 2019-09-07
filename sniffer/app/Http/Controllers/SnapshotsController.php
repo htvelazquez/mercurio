@@ -24,22 +24,19 @@ class SnapshotsController extends Controller
 {
     public function store(StoreSnapshot $request) {
         $contactData = [
-            'external_id'   => $request->lId,
-            'salesforce_id' => $request->salesforceId
+            'linkedin_id'   => $request->id
         ];
 
-        $contact = Contact::where('external_id', $request->lId)->first();
+        $contact = Contact::where('linkedin_id', $request->id)->first();
 
         if (empty($contact)) {
             $contact = Contact::create($contactData);
-        } else {
-            $contact->salesforce_id = $request->salesforceId;
-            $contact->save();
         }
 
         $snapshotData = [
             'contact_id'=> $contact->id,
-            'priority'  => $request->priority,
+            // 'priority'  => $request->priority,
+            'priority'  => 1,
             'status'    => 0
         ];
 
@@ -206,7 +203,7 @@ class SnapshotsController extends Controller
             }
         }
 
-        ProcessSnapshot::dispatch($contact);
+        // ProcessSnapshot::dispatch($contact);
 
         return response()->json([
             'success' => true,

@@ -1,5 +1,5 @@
 <?php
-Route::post('snapshot', 'SnapshotsController@store')->middleware('x.api.key');
+Route::post('contacts', 'SnapshotsController@store')->middleware('x.api.key');
 
 Route::get('v1/ping', 'AlertsController@ping')->middleware('x.api.key');
 Route::get('v1/alerts', 'AlertsController@listGet')->middleware('x.api.key');

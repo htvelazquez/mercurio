@@ -30,7 +30,7 @@ class Baseline extends Migration
 
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('external_id',30)->unique();
+            $table->string('linkedin_id',30)->unique();
             $table->timestamps();
         });
 
@@ -101,7 +101,7 @@ class Baseline extends Migration
             $table->increments('id');
             $table->string('name', 128);
             $table->string('label', 128);
-            $table->integer('linkedin_id');
+            $table->integer('linkedin_id')->unsigned()->nullable();
             $table->string('link', 128)->nullable();
             $table->timestamps();
         });
