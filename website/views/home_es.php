@@ -6,18 +6,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="views/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="views/css/animate.css">
+    <link rel="stylesheet" href="views/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="views/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="views/css/magnific-popup.css">
+    <link rel="stylesheet" href="views/css/aos.css">
+    <link rel="stylesheet" href="views/css/ionicons.min.css">
+    <link rel="stylesheet" href="views/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="views/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="views/css/flaticon.css">
+    <link rel="stylesheet" href="views/css/icomoon.css">
+    <link rel="stylesheet" href="views/css/style.css">
 </head>
 
 <body>
@@ -33,6 +33,9 @@
                     <li class="nav-item"><a href="#services" class="nav-link">Servicios</a></li>
                     <li class="nav-item"><a href="#meetus" class="nav-link">Conocenos</a></li>
                     <li class="nav-item cta"><a href="#contact-us" class="nav-link"><span>Solicita una prueba</span></a></li>
+                    <li class="nav-item">
+                      <a href="/en" class="nav-link">ENGLISH</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -293,20 +296,20 @@
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
         </svg>
     </div>
-    <script src="js/jquery.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/popper.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.easing.1.3.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.waypoints.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.stellar.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/owl.carousel.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.magnific-popup.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/aos.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/jquery.animateNumber.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/scrollax.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/google-map.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="js/main.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery-migrate-3.0.1.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/popper.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/bootstrap.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery.easing.1.3.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery.waypoints.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery.stellar.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/owl.carousel.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery.magnific-popup.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/aos.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery.animateNumber.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/scrollax.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/google-map.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/main.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
 
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="dc5be274a79aa330cd99d5a3-|49" defer=""></script>
 </body>
