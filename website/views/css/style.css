@@ -7822,7 +7822,8 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     }
 }
 .ftco-navbar-light .navbar-brand{
-    color:#fff
+    color:#fff;
+    font-weight:600
 }
 .ftco-navbar-light .navbar-nav>.nav-item>.nav-link{
     font-size:14px;
