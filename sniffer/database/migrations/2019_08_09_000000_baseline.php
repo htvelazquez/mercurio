@@ -80,7 +80,7 @@ class Baseline extends Migration
             $table->timestamps();
         });
 
-        Schema::create('snapshot_metadatas', function (Blueprint $table) {
+        Schema::create('snapshot_metadata', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('snapshot_id')->unsigned();
             $table->string('name', 128)->nullable();
@@ -222,7 +222,7 @@ class Baseline extends Migration
         Schema::dropIfExists('skills');
         Schema::dropIfExists('snapshot_experiences');
         Schema::dropIfExists('companies');
-        Schema::dropIfExists('snapshot_metadatas');
+        Schema::dropIfExists('snapshot_metadata');
         Schema::dropIfExists('locations');
         Schema::dropIfExists('snapshot_educations');
         Schema::dropIfExists('study_fields');

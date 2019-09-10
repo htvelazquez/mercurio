@@ -10,14 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
     "gulp-bump": "^2.9.0",
     "gulp-clean": "^0.3.2",
     "gulp-string-replace": "^0.3.1",
     "gulp-zip": "^3.2.0",
-    "semver": "^5.5.1",
+    "semver": "^5.7.1",
     "yargs": "^6.6.0"
   },
-  "dependencies": {
-    "gulp": "^3.9.1"
-  }
+  "dependencies": {}
 }

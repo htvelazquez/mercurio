@@ -15,6 +15,10 @@ var local_cirenio_url =  '0.0.0.0:8011',
 	qa_cirenio_url =  'sniffer.cirenio.com',
 	prod_cirenio_url =  'sniffer.cirenio.com';
 
+var local_cirenio_key = 'testest',
+	qa_cirenio_key = 'dDINuoPRpuT8Sa6V184df96v3VuSR6uL',
+	prod_cirenio_key = 'dDINuoPRpuT8Sa6V184df96v3VuSR6uL';
+
 var remoteConfigFile = 'src/js/remoteConfig.js',
 	manifestFile = './src/manifest.json';
 
@@ -64,20 +68,26 @@ gulp.task('setconfig', ['copy'], function () {
 			return gulp.src(remoteConfigFile)
 				.pipe(replace( '\/' + local_cirenio_url , '\/' + prod_cirenio_url))
 				.pipe(replace( '\/' + qa_cirenio_url , '\/' + prod_cirenio_url))
-\				.pipe(gulp.dest(destFile));
+				.pipe(replace( '\/' + local_cirenio_key , '\/' + prod_cirenio_key))
+				.pipe(replace( '\/' + qa_cirenio_key , '\/' + prod_cirenio_key))
+				.pipe(gulp.dest(destFile));
 
     	case 'qa':
 		case 'test':
 			return gulp.src(remoteConfigFile)
-		  	    .pipe(replace( '\/' + local_cirenio_url , '\/' + qa_cirenio_url))
+  	    .pipe(replace( '\/' + local_cirenio_url , '\/' + qa_cirenio_url))
 				.pipe(replace( '\/' + prod_cirenio_url, '\/' + qa_cirenio_url))
-		  	    .pipe(gulp.dest(destFile));
+				.pipe(replace( '\/' + local_cirenio_key , '\/' + qa_cirenio_key))
+				.pipe(replace( '\/' + prod_cirenio_key, '\/' + qa_cirenio_key))
+  	    .pipe(gulp.dest(destFile));
 
 		case 'dev':
 		case 'local':
 			return gulp.src(remoteConfigFile)
 				.pipe(replace( '\/' + prod_cirenio_url, '\/' + local_cirenio_url))
 				.pipe(replace( '\/' + qa_cirenio_url, '\/' + local_cirenio_url))
+				.pipe(replace( '\/' + prod_cirenio_key, '\/' + local_cirenio_key))
+				.pipe(replace( '\/' + qa_cirenio_key, '\/' + local_cirenio_key))
 				.pipe(gulp.dest(destFile));
 
     	default:
