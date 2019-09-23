@@ -1,0 +1,1 @@
+chrome.runtime.sendMessage({ type: MESSAGE_APP_AUTH_ERROR }, function (response) {});
