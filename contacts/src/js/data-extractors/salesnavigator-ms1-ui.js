@@ -41,7 +41,7 @@ var SalesNavigatorMS1DataExtractor = {
         var self = this;
         var dataPromises = [];
         dataPromises.push(new Promise(function onTopCardLoaded(resolve, reject) {
-            jQueryScraper('h1.brand linkedin-logo.ember-view').waitForSelector(function() {
+            jQueryScraper('div.container nav.nav-main a.brand').waitForSelector(function() {
 
                 self.datajson = self.getDataJson();
 

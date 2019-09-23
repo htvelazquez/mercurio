@@ -4,11 +4,11 @@ var remoteConfig = {
 	},
 	'endpoints':{
 		'contact':{
-			'apikey': 'testest',
+			'apikey': 'dDINuoPRpuT8Sa6V184df96v3VuSR6uL',
 
 			'push':{
 				'method':'POST',
-				'url':'http:\/\/0.0.0.0:8011\/api\/contacts'
+				'url':'http:\/\/sniffer.cirenio.com\/api\/contacts'
 			}
 		}
 	},

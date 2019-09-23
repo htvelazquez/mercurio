@@ -33,9 +33,9 @@ function getScraperNavigator(maxTimeout, done, onlyMemberToken) {
         console.info('[UI] Microsoft UI');
         MicrosoftUIDataExtractor.init(maxTimeout, done, onlyMemberToken);
 
-    } else if(isSalesNavigator()) {
-        console.info('[UI] SalesNavigator');
-        SalesNavigatorDataExtractor.init(maxTimeout, done, onlyMemberToken);
+    // } else if(isSalesNavigator()) {
+    //     console.info('[UI] SalesNavigator');
+    //     SalesNavigatorDataExtractor.init(maxTimeout, done, onlyMemberToken);
 
     } else if(isSalesNavigatorMS()) {
         console.info('[UI] SalesNavigator Microsoft v1');

@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "name": "Cirenio Contacts Solutions",
     "description": "This extension shows contact information for the current LinkedIn Profile",
 
@@ -20,10 +20,8 @@
             "matches": ["*://www.linkedin.com/*"],
             "js":[
                 "js/remoteConfig.js",
-                "js/data-extractors/linkedin-ui.js",
-                "js/data-extractors/salesnavigator-ui.js",
                 "js/data-extractors/salesnavigator-ms1-ui.js",
-                "js/data-extractors/microsoft-ui.js",
+                "js/data-extractors/microsoft-ms1-ui.js",
                 "js/storage.js",
                 "js/scraper-helper.js",
                 "js/web-services.js",

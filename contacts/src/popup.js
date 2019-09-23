@@ -191,6 +191,15 @@ function uploadContactButtonAction(){
     event.preventDefault();
     $('#upload-button').prop('disabled', true);
 
+    renderStatus('Checking data...','warning');
+    if ($("#emailguess").val() != '' && LinkedinProfileData.email != $("#emailguess").val()){
+      LinkedinProfileData.email = $("#emailguess").val();
+    }
+
+    if ($("#website").val() != '' && LinkedinProfileData.website != $("#website").val()){
+      LinkedinProfileData.website = $("#website").val();
+    }
+
     renderStatus('Saving to Cirenio...','warning');
 
     WebServices.pushContactData(LinkedinProfileData, function (response) {
