@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Cirenio :: On-Demand Databases</title>
+    <title>Cirenio :: Automatización On-Demand</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -23,16 +23,16 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Cirenio</a>
+            <a class="navbar-brand" href="/es">Cirenio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#products" class="nav-link">Productos</a></li>
                     <li class="nav-item"><a href="#services" class="nav-link">Servicios</a></li>
-                    <li class="nav-item"><a href="#meetus" class="nav-link">Conocenos</a></li>
-                    <li class="nav-item cta"><a href="#contact-us" class="nav-link"><span>Solicita una prueba</span></a></li>
+                    <li class="nav-item cta"><a href="#contact-us" class="nav-link"><span>Contacto</span></a></li>
                     <li class="nav-item">
                       <a href="/en" class="nav-link">ENGLISH</a>
                     </li>
@@ -47,13 +47,13 @@
         <div class="circle-bg-2"></div>
         <div class="container-fluid">
             <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
-                <div class="one-forth pr-md-4 ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
-                    <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Descubrimiento <br> Búsqueda <br> Actualización</h1>
-                    <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Mejorá tus métricas, gracias a información actualizada, precisa, limpia, confiable y ajustada a las necesidades de tu negocio.</p>
-                    <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#contact-us" class="btn btn-primary px-4 py-3">Solicita una prueba</a></p>
+                <div class="one-half pl-5 ml-5 ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
+                    <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Mejoremos juntos</h1>
+                    <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Obtiene mejores resultados gracias a la automatización de procesos.</p>
+                    <!-- p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#contact-us" class="btn btn-primary px-4 py-3">Contact Us</a></p-->
                 </div>
 
-                <div class="one-half align-self-md-end align-self-sm-center">
+                <!--div class="one-half align-self-md-end align-self-sm-center">
                     <div class="slider-carousel owl-carousel owl-loaded owl-drag">
                         <div class="owl-stage-outer">
                             <div class="owl-stage" style="transform: translate3d(-3960px, 0px, 0px); transition: all 0s ease 0s; width: 6930px;">
@@ -84,36 +84,38 @@
                         </div>
                         <div class="owl-dots disabled"></div>
                     </div>
-                </div>
+                </div-->
 
             </div>
         </div>
     </div>
-    <section id="services" class="ftco-section">
+    <section id="products" class="ftco-section">
         <div class="container">
-            <div class="row justify-content-center mb-5 pb-5">
+            <div class="row justify-content-center mb-2 pb-2">
                 <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Servicios</span>
-                    <h2 class="mb-4">Que hacemos</h2>
+                    <!--span class="subheading">Services</span -->
+                    <h2 class="mb-4">Productos</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12 nav-link-wrap mb-5 pb-md-5 pb-sm-1 ftco-animate">
-                    <div class="nav ftco-animate nav-pills justify-content-center text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-nextgen-tab" data-toggle="pill" href="#v-pills-nextgen" role="tab" aria-controls="v-pills-nextgen" aria-selected="true">Descubrimiento</a>
-                        <a class="nav-link" id="v-pills-performance-tab" data-toggle="pill" href="#v-pills-performance" role="tab" aria-controls="v-pills-performance" aria-selected="false">Búsqueda</a>
-                        <a class="nav-link" id="v-pills-effect-tab" data-toggle="pill" href="#v-pills-effect" role="tab" aria-controls="v-pills-effect" aria-selected="false">Actualización</a>
+                <div class="col-md-12 nav-link-wrap mb-4 pb-md-4 pb-sm-1 ftco-animate">
+                    <div class="nav ftco-animate nav-pills justify-content-center text-center" id="v-hunter-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-hunter-tab" data-toggle="pill" href="#v-hunter" role="tab" aria-controls="v-hunter" aria-selected="true">Leads Hunter</a>
+                        <a class="nav-link" id="v-linkedin-tab" data-toggle="pill" href="#v-linkedin" role="tab" aria-controls="v-linkedin" aria-selected="false">Cirenio LinkedIn Helper</a>
+                        <a class="nav-link" id="v-contacts-tab" data-toggle="pill" href="#v-contacts" role="tab" aria-controls="v-contacts" aria-selected="false">Contacts Grabber</a>
+                        <a class="nav-link" id="v-tech-tracker-tab" data-toggle="pill" href="#v-tech-tracker" role="tab" aria-controls="v-tech-tracker" aria-selected="false">Web Tech Tracker</a>
+                        <a class="nav-link" id="v-europium-tab" data-toggle="pill" href="#v-europium" role="tab" aria-controls="v-europium" aria-selected="false">Europium</a>
                     </div>
                 </div>
                 <div class="col-md-12 align-items-center ftco-animate">
                     <div class="tab-content ftco-animate" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-nextgen" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+                        <div class="tab-pane fade show active" id="v-hunter" role="tabpanel" aria-labelledby="v-hunter-tab">
                             <div class="d-md-flex">
                                 <div class="one-forth align-self-center">
                                     <img src="images/dashboard_full_1.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half ml-md-5 align-self-center">
-                                    <h2 class="mb-4">Descubrimiento</h2>
+                                    <h2 class="mb-4">Leads Hunter</h2>
                                     <p>Con la ayuda de nuestros analistas podrás generar un perfil de cliente (Costumer Profile) que te ayudará a enforcar tus esfuerzos en el público que te dará los mejores resultados.</p>
                                     <p>Somos especialistas en <b>Mercados de Nicho</b>, donde cada contacto cuenta.</p>
                                     <p>A partir del relevamiento personalizdo de las necesidades para tu negocio, sabrás cual es la información que generará el mayor <b>valor agregado</b>.</p>
@@ -121,26 +123,56 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-performance" role="tabpanel" aria-labelledby="v-pills-performance-tab">
+
+                        <div class="tab-pane fade" id="v-linkedin" role="tabpanel" aria-labelledby="v-linkedin-tab">
                             <div class="d-md-flex">
                                 <div class="one-forth order-last align-self-center">
                                     <img src="images/dashboard_full_2.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half order-first mr-md-5 align-self-center">
-                                    <h2 class="mb-4">Búsqueda</h2>
+                                    <h2 class="mb-4">Cirenio LinkedIn Helper</h2>
                                     <p>A partir del ICP (Ideal Costumer Profile), realizamos uno de los procesos de <b>'Lead Generation'</b> más rápido y preciso del mercado.</p>
                                     <p>Ejecutamos una búsqueda de exhaustiva de aquellos datos que conforman la completitud del perfil necesario para ejecutar una venta satisfactoriamente.</p>
                                     <p>Gracias a nuestro complejo sistema de generación de información con valor agregado, podrás enfocarte en lo realmente relevante.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-effect" role="tabpanel" aria-labelledby="v-pills-effect-tab">
+
+                        <div class="tab-pane fade" id="v-contacts" role="tabpanel" aria-labelledby="v-contacts-tab">
                             <div class="d-md-flex">
                                 <div class="one-forth align-self-center">
                                     <img src="images/dashboard_full_1.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half ml-md-5 align-self-center">
-                                    <h2 class="mb-4">Actualización</h2>
+                                    <h2 class="mb-4">Contacts Grabber</h2>
+                                    <p>Contamos con un sistema de actualización para bases de datos pre-existentes, basado en la retroalimentación continua.</p>
+                                    <p>Disponibilizamos un avanzado sistema de deteccion y alerta de cambios significativos en la información clave para tu negocio.</p>
+                                    <p>Te ayudamos a detectar el momento justo de abordar a tu público objetivo para obtener los mejores resultados.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="v-tech-tracker" role="tabpanel" aria-labelledby="v-tech-tracker-tab">
+                            <div class="d-md-flex">
+                                <div class="one-forth order-last align-self-center">
+                                    <img src="images/dashboard_full_2.jpg" class="img-fluid border" alt="">
+                                </div>
+                                <div class="one-half order-first mr-md-5 align-self-center">
+                                    <h2 class="mb-4">Web Tech Tracker</h2>
+                                    <p>A partir del ICP (Ideal Costumer Profile), realizamos uno de los procesos de <b>'Lead Generation'</b> más rápido y preciso del mercado.</p>
+                                    <p>Ejecutamos una búsqueda de exhaustiva de aquellos datos que conforman la completitud del perfil necesario para ejecutar una venta satisfactoriamente.</p>
+                                    <p>Gracias a nuestro complejo sistema de generación de información con valor agregado, podrás enfocarte en lo realmente relevante.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="v-europium" role="tabpanel" aria-labelledby="v-europium-tab">
+                            <div class="d-md-flex">
+                                <div class="one-forth align-self-center">
+                                    <img src="images/dashboard_full_1.jpg" class="img-fluid border" alt="">
+                                </div>
+                                <div class="one-half ml-md-5 align-self-center">
+                                    <h2 class="mb-4">Europium</h2>
                                     <p>Contamos con un sistema de actualización para bases de datos pre-existentes, basado en la retroalimentación continua.</p>
                                     <p>Disponibilizamos un avanzado sistema de deteccion y alerta de cambios significativos en la información clave para tu negocio.</p>
                                     <p>Te ayudamos a detectar el momento justo de abordar a tu público objetivo para obtener los mejores resultados.</p>
@@ -153,18 +185,18 @@
         </div>
     </section>
     <section id="contact-us" class="ftco-section-parallax">
-        <div class="parallax-img d-flex align-items-center">
+        <div class="parallax-img d-flex align-items-center p-6">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                        <h2>Solicita una prueba</h2>
-                        <p>Déjanos tu dirección de email y un representante se comunicará a la brevedad</p>
+                        <h2>Contact Us</h2>
+                        <p>Leave us your email address and a representative will contact you shortly</p>
                         <div class="row d-flex justify-content-center mt-5">
                             <div class="col-md-6">
                                 <form action="#" class="subscribe-form">
                                     <div class="form-group">
                                         <span class="icon icon-paper-plane"></span>
-                                        <input type="text" class="form-control" placeholder="Ingresa tu email">
+                                        <input type="text" class="form-control" placeholder="your@email.com">
                                     </div>
                                 </form>
                             </div>
@@ -174,12 +206,12 @@
             </div>
         </div>
     </section>
-    <section id="meetus" class="ftco-section services-section">
+    <section id="services" class="ftco-section services-section">
         <div class="container">
-            <div class="row justify-content-center mb-5 pb-5">
+            <div class="row justify-content-center mb-3 pb-3">
                 <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Conocenos</span>
-                    <h2 class="mb-4">Porque elegirnos</h2>
+                    <!--span class="subheading">Conocenos</span-->
+                    <h2 class="mb-4">Services</h2>
                 </div>
             </div>
             <div class="row">

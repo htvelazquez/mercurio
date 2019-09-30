@@ -6749,6 +6749,9 @@ a.bg-dark:hover,a.bg-dark:focus,button.bg-dark:hover,button.bg-dark:focus{
 .pl-5,.px-5{
     padding-left:3rem!important
 }
+.p-6{
+    padding:6rem!important
+}
 .m-auto{
     margin:auto!important
 }
@@ -7994,7 +7997,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     height:100%;
     position:relative;
     z-index:1;
-    height:630px
+    height:450px
 }
 @media(max-width:767.98px){
     .hero-wrap{
@@ -8077,7 +8080,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     border-radius:50%
 }
 .slider-text{
-    height:700px;
+    height:560px;
     position:relative
 }
 @media(max-width:767.98px){
@@ -8748,7 +8751,7 @@ textarea.form-control{
     font-size:24px
 }
 .ftco-section{
-    padding:8em 0;
+    padding:4em 0;
     position:relative
 }
 @media(max-width:767.98px){
@@ -8924,7 +8927,7 @@ textarea.form-control{
     margin-bottom:20px
 }
 .heading-section h2{
-    font-size:30px;
+    font-size:40px;
     font-weight:400
 }
 @media(max-width:767.98px){
