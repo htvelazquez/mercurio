@@ -22,11 +22,11 @@
           <tbody>
               <tr>
             <?php $i=1; foreach($banks as $bank) { ?>
-              <td class="<?php echo $bank['alias'] ?> background-bw bank-background" >
-                <a href="/form/<?php echo $bank['alias'].'/'.$bank['id'] ?>" title="<?php echo $bank['name'] ?>" ></a>
+              <td class="<?php echo $bank['alias']; ?> background-bw bank-background" >
+                <a href="/form/<?php echo $bank['alias'].'/'.$bank['id']; ?>" title="<?php echo $bank['name']; ?>" ></a>
               </td>
               <?php if ($i % 4 == 0) { ?> </tr><tr> <?php } ?>
-            <? $i++; } ?>
+            <?php $i++; } ?>
               </tr>
           </tbody>
         </table>
