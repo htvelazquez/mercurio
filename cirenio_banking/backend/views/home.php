@@ -3,19 +3,25 @@
 
 <?php Flight::render("header"); ?>
 
-<body>
-  <nav class="navbar navbar-default top-navbar" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/"><span class="brand" >Cirenio</span> Banking</a>
-    </div>
-  </nav>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+  <?php Flight::render("navbar"); ?>
 
-  <div class="container" style="margin-top:80px;">
-    <div class="row justify-content-center mb-3 pb-3">
-        <div class="col-md-7 text-center heading-section ftco-animate fadeInUp ftco-animated">
-            <h2 class="mb-4" style="text-align:left">Para comenzar escoge tu banco:</h2>
-        </div>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Para comenzar escoge tu banco:</h1>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </div>
+    <!-- /.content-header -->
+
+
     <div class="row" style="margin-top:100px">
       <div class="table-responsive">
         <table id="banks" class="table">
@@ -23,7 +29,7 @@
               <tr>
             <?php $i=1; foreach($banks as $bank) { ?>
               <td class="<?php echo $bank['alias']; ?> background-bw bank-background" >
-                <a href="/form/<?php echo $bank['alias'].'/'.$bank['id']; ?>" title="<?php echo $bank['name']; ?>" ></a>
+                <a href="/form/<?php echo $bank['alias']; ?>" title="<?php echo $bank['name']; ?>" ></a>
               </td>
               <?php if ($i % 4 == 0) { ?> </tr><tr> <?php } ?>
             <?php $i++; } ?>
@@ -33,7 +39,15 @@
       </div>
 
     </div>
+
+
+
+  </div>
+  <!-- /.content-wrapper -->
+
 </div>
+<!-- ./wrapper -->
+
 </body>
 
 </html>

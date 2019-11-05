@@ -108,7 +108,7 @@
 		return Flight::json(array('success' => false));
 	});
 
-	Flight::route('GET /form/@alias/@id[\d+]', function($alias,$id){
+	Flight::route('GET /form/@alias', function($alias){
 		Flight::render("forms/$alias");
 	});
 
