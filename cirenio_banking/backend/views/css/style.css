@@ -1,28 +1,22 @@
-/*----------------------------------------------
-Author : www.webthemez.com
-License: Commons Attribution 3.0
-http://creativecommons.org/licenses/by/3.0/
-------------------------------------------------*/
-
-
-/*----------------------------------------------
-    COMMON  STYLES
-------------------------------------------------*/
-body {
-    font-family: poppins,Arial,sans-serif;
+.navbar-cirenio {
+  background-color: #55CBC8;
 }
 
-.top-navbar{
-margin:0px;
-}
-.top-navbar .navbar-brand {
-  color: #fff;
-  width: 500px;
+.navbar-cirenio .brand-link {
+  font-family: poppins,Arial,sans-serif;
+  padding: 0;
+  width: auto;
+  color: #FFF;
   text-align: right;
-  height: 60px;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 30px;
+  font-weight: 500;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.cirenio-footer a {
+  font-family: poppins,Arial,sans-serif;
+  color: #55CBC8;
+  font-weight: 500;
 }
 
 table#banks a {
@@ -48,26 +42,6 @@ table#banks td:hover a img {
 
 table#banks td {
   border: 6px #FFFFFF solid;
-}
-
-.top-navbar .navbar-brand span.brand {
-  font-weight: 500;
-  font-size: 40px;
-  text-transform: uppercase;
-}
-
-.navbar-side {
-	border:none;
-	background-color: transparent;
-}
-.top-navbar {
-	background: #55CBC8;
-	border-bottom:none;
-
-}
-.navbar-header {
-    background: #55CBC8;
-    float: right;
 }
 
 /* ** BANK STYLES ** */

@@ -35,7 +35,7 @@ CREATE TABLE `jobs_data` (
 
 INSERT INTO `banks` (`code`, `name`, `link`, `alias`)
 VALUES
-	('00007','BANCO DE GALICIA Y BUENOS AIRES S.A.U.','bancogalicia.com/banca/online/web/Personas/ProductosyServicios/nuevo-online-banking-galicia','galicia'),
+	('00007','BANCO DE GALICIA Y BUENOS AIRES S.A.U.','https://onlinebanking.bancogalicia.com.ar/login','galicia'),
 	('00011','BANCO DE LA NACION ARGENTINA','https://hb.redlink.com.ar/bna/login.htm','nacion'),
 	('00014','BANCO DE LA PROVINCIA DE BUENOS AIRES','https://www.bancoprovincia.bancainternet.com.ar/eBanking/login/inicio.htm','provincia'),
 	('00015','INDUSTRIAL AND COMMERCIAL BANK OF CHINA','https://www.accessbanking.com.ar/RetailHomeBankingWeb/init.do','icbc'),
