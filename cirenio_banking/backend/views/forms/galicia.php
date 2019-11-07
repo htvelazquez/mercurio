@@ -27,9 +27,9 @@
        <div class="container-fluid">
          <div class="row">
            <!-- left column -->
-           <div class="col-md-4 mx-auto">
+           <div id="formContainer" class="col-md-4 mx-auto">
              <!-- general form elements -->
-             <div id="formContainer" class="card card-primary">
+             <div class="card card-primary">
                <div class="card-header">
                  <h3 class="card-title">Ingresa tus credenciales</h3>
                </div>
@@ -56,19 +56,17 @@
                      <label class="form-check-label" for="tyc">Acepto los Términos y Condiciones de CIRENIO</label>
                    </div>
                  </div>
-                 <!-- /.card-body -->
-
                  <div class="card-footer">
                    <button id="submit" type="submit" class="btn btn-primary float-right">Iniciar Sesión</button>
                  </div>
                </form>
              </div>
-             <?php Flight::render("overlay"); ?>
-             <?php Flight::render("result"); ?>
-
-             <!-- /.card -->
            </div>
            <!--/.col (left) -->
+
+           <?php Flight::render("overlay"); ?>
+           <?php Flight::render("result-container"); ?>
+
          </div>
          <!-- /.row -->
        </div><!-- /.container-fluid -->
@@ -85,8 +83,8 @@
           url: "/data/"+hash,
           type: "get",
       }).done(function (response, textStatus, jqXHR){
-        if (response.success){
-          callback(response.data);
+        if (response){
+          callback(response);
         }else{
           setTimeout(function() {
             waitReply(hash,callback);
@@ -132,8 +130,8 @@
         alert('Debes aceptar nuestros términos y condiciones de uso');
         return;
       }
-      $("#formContainer").hide();
-      $("#overlayContainer").show();
+      $("#formContainer").addClass('d-none');
+      $("#overlayContainer").removeClass('d-none');
 
       $.ajax({
           url: "/job",
@@ -144,10 +142,8 @@
       }).done(function (response, textStatus, jqXHR){
         if (response.success){
           waitReply(response.hash, function(data){
-            var textedJson = JSON.stringify(data, undefined, 4);
-            $("#overlayContainer").hide();
-            $("#result").text(textedJson);
-            $("#resultContainer").show();
+            $("#overlayContainer").addClass('d-none');
+            $("#resultContainer").html(data).removeClass('d-none');
           });
         }
       }).fail(function (jqXHR, textStatus, errorThrown){

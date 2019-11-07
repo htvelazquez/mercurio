@@ -43,9 +43,9 @@
 				'url'			=> $job['link'],
 				'hash'		=> $job['hash'],
 				'success'	=> true
-			]);
+			],200);
 		}
-		return Flight::json(array('success' => false));
+		return Flight::json(array('success' => false),404);
 	});
 
 	Flight::route('POST /job', function(){
@@ -74,10 +74,10 @@
 			$sth = Flight::db()->prepare($sql);
 			$sth->execute();
 		} catch (Exception $e) {
-			return Flight::json(array('success' => false));
+			return Flight::json(array('success' => false),400);
 		}
 
-		return Flight::json(array('success' => true, 'hash' => $data['hash']));
+		return Flight::json(array('success' => true, 'hash' => $data['hash']),200);
 	});
 
 	Flight::route('POST /data/@hash', function($hash){
@@ -89,23 +89,23 @@
 		    $sth = Flight::db()->prepare($sql);
 		    $sth->execute();
 		} catch (Exception $e) {
-			return Flight::json(array('success' => false));
+			return Flight::json(array('success' => false),400);
 		}
 
 		$sql = "DELETE FROM jobs WHERE hash = '$hash'";
 		$sth = Flight::db()->prepare($sql);
 		$sth->execute();
-		return Flight::json(array('success' => true));
+		return Flight::json(array('success' => true),200);
 	});
 
 	Flight::route('GET /data/@hash', function($hash){
 		$data = Flight::db()->query("SELECT * FROM `jobs_data` WHERE hash = '$hash'")->fetch_assoc();
 
 		if (!empty($data)){
-			return Flight::json(array('success' => true, 'data' => json_decode($data['data'])));
+			return Flight::render('result', array('data' => json_decode($data['data'])));
 		}
 
-		return Flight::json(array('success' => false));
+		return Flight::json(array('success' => false),404);
 	});
 
 	Flight::route('GET /form/@alias', function($alias){
