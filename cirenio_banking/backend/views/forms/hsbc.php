@@ -56,7 +56,7 @@
            <!--/.col (left) -->
 
            <?php Flight::render("overlay"); ?>
-           <?php Flight::render("result"); ?>
+           <?php Flight::render("result-container"); ?>
 
          </div>
          <!-- /.row -->
@@ -110,8 +110,8 @@
         url: "/data/"+hash,
         type: "get",
     }).done(function (response, textStatus, jqXHR){
-      if (response.success){
-        callback(response.data);
+      if (response){
+        callback(response);
       }else{
         setTimeout(function() {
           waitReply(hash,callback);
@@ -159,10 +159,8 @@
     }).done(function (response, textStatus, jqXHR){
       if (response.success){
         waitReply(response.hash, function(data){
-          // var textedJson = JSON.stringify(data, undefined, 4);
           $("#overlayContainer").addClass("d-none");
-          // $("#result").text(textedJson);
-          $("#resultContainer").removeClass("d-none");
+          $("#resultContainer").html(data).removeClass('d-none');
         });
       }
     }).fail(function (jqXHR, textStatus, errorThrown){
