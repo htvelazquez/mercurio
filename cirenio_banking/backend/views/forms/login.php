@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Banco HSBC</h1>
+            <h1 class="m-0 text-dark">Bienvenido a CIRENIO</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -25,15 +25,13 @@
            <div id="formContainer" class="col-md-4 mx-auto">
              <div class="card card-primary">
                <div class="card-header">
-                 <h3 class="card-title">Ingresa tus credenciales</h3>
+                 <h3 class="card-title">Inicia sesión para continuar</h3>
                </div>
-               <form id="bankForm" autocomplete="off" role="form">
-                 <input id="bankId" type="hidden" value="21" />
+               <form id="loginForm" autocomplete="off" role="form">
                  <div class="card-body">
                    <div class="form-group">
-                     <label for="username">Nombre de usuario</label>
+                     <label for="username">Usuario</label>
                      <input type="input" class="form-control" id="username" placeholder="Usuario">
-                     <small class="form-text text-muted">No guardaremos ninguno de tus datos.</small>
                    </div>
                    <div class="form-group">
                      <label for="password">Contraseña</label>
@@ -41,7 +39,17 @@
                    </div>
                    <div class="form-check">
                      <input type="checkbox" class="form-check-input" id="tyc">
-                     <label class="form-check-label" for="tyc">Acepto los Términos y Condiciones de CIRENIO</label>
+                     <label class="form-check-label" for="tyc">Reconozco que CIRENIO es un DEMO y no guardará ninguno de mis datos bancarios</label>
+                   </div>
+                   <div id="invalidCredentials" class="alert alert-warning alert-dismissible mt-3 d-none">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-exclamation-triangle"></i> Atención!</h5>
+                    Las credenciales ingresadas son inválidas
+                   </div>
+                   <div id="internalError" class="alert alert-danger alert-dismissible mt-3 d-none">
+                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                     <h5><i class="icon fas fa-ban"></i> Atención!</h5>
+                       Estamos teniendo problemas técnicos, vuelve a intentar en unos minutos
                    </div>
                  </div>
                  <div class="card-footer">
@@ -51,8 +59,6 @@
              </div>
            </div>
            <!--/.col (left) -->
-
-           <?php Flight::render("overlay"); ?>
            <?php Flight::render("result-container"); ?>
 
          </div>
@@ -69,33 +75,13 @@
 <?php Flight::render("admin-scripts"); ?>
 
 <script type="text/javascript">
-  function waitReply(hash,callback) {
-    $.ajax({
-        url: "/data/"+hash,
-        type: "get",
-    }).done(function (response, textStatus, jqXHR){
-      if (response){
-        callback(response);
-      }else{
-        setTimeout(function() {
-          waitReply(hash,callback);
-        }, 8000);
-      }
-    }).fail(function (){
-      setTimeout(function() {
-        waitReply(hash,callback);
-      }, 8000);
-    });
-  };
-
-  $("form#bankForm").submit(function(e){
+  $("form#loginForm").submit(function(e){
     e.preventDefault();
   });
 
   $("button#submit").click(function(){
     $('.is-invalid').removeClass('is-invalid');
     var data = {
-      bank_id: $('#bankId').val(),
       user: '',
       password: ''
     };
@@ -111,24 +97,22 @@
       alert('Debes aceptar nuestros términos y condiciones de uso');
       return;
     }
-    $("#formContainer").addClass("d-none");
-    $("#overlayContainer").removeClass("d-none");
+    $("#invalidCredentials, #internalError").addClass("d-none");
 
     $.ajax({
-        url: "/job",
+        url: "/login",
         type: "post",
         dataType: "json",
         contentType: "application/json",
         data: JSON.stringify(data)
     }).done(function (response, textStatus, jqXHR){
       if (response.success){
-        waitReply(response.hash, function(data){
-          $("#overlayContainer").addClass("d-none");
-          $("#resultContainer").html(data).removeClass('d-none');
-        });
+        window.location.href = "/";
+      }else{
+        $("#invalidCredentials").removeClass("d-none");
       }
     }).fail(function (jqXHR, textStatus, errorThrown){
-      alert('Algo anda mal... vuelve a intentarlo en unos minutos');
+      $("#internalError").removeClass("d-none");
     });
 
   });
