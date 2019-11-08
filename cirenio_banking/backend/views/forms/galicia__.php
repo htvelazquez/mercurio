@@ -3,7 +3,7 @@
 
 <?php Flight::render("header"); ?>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php Flight::render("navbar"); ?>
 
@@ -77,81 +77,83 @@
   <?php Flight::render("footer"); ?>
 </div>
 
-  <script type="text/javascript">
-    function waitReply(hash,callback) {
-      $.ajax({
-          url: "/data/"+hash,
-          type: "get",
-      }).done(function (response, textStatus, jqXHR){
-        if (response){
-          callback(response);
-        }else{
-          setTimeout(function() {
-            waitReply(hash,callback);
-          }, 8000);
-        }
-      }).fail(function (){
+<?php Flight::render("admin-scripts"); ?>
+
+<script type="text/javascript">
+  function waitReply(hash,callback) {
+    $.ajax({
+        url: "/data/"+hash,
+        type: "get",
+    }).done(function (response, textStatus, jqXHR){
+      if (response){
+        callback(response);
+      }else{
         setTimeout(function() {
           waitReply(hash,callback);
         }, 8000);
-      });
+      }
+    }).fail(function (){
+      setTimeout(function() {
+        waitReply(hash,callback);
+      }, 8000);
+    });
+  };
+
+  $("form#bankForm").submit(function(e){
+    e.preventDefault();
+  });
+
+  $("button#submit").click(function(){
+    $('.is-invalid').removeClass('is-invalid');
+    var data = {
+      bank_id: $('#bankId').val(),
+      document_num: '',
+      user: '',
+      password: ''
     };
+    data.user = $("#username").val();
+    data.password = $("#password").val();
+    data.document_num = $('#document').val();
+    if (data.user == '' || data.password == '' || !data.password.match(/\d{4}/) || data.document_num == '' || !data.document_num.match(/\d+/)){
+      // if (data.document_num == '' || data.document_num.match(/\d+/)) $("#document").parent('.form-group').addClass('is-invalid');
+      // if (data.user == '') $("#username").parent('.form-group').addClass('is-invalid');
+      // if (data.password == '' || data.password.match(/\d{4}/)) $("#password").parent('.form-group').addClass('is-invalid');
 
-    $("form#bankForm").submit(function(e){
-      e.preventDefault();
+      if (data.user == '' || data.password == '' || data.document_num == ''){
+        alert('Todos los datos son necesarios para continuar');
+      }else if (!data.password.match(/\d{4}/)){
+        alert('La clave debe ser númerica y de 4 dígitos');
+      }else if (!data.document_num.match(/\d+/)){
+        alert('El DNI debe cargarse solo con números');
+      }
+      return;
+    }
+    if (!$("#tyc").is(':checked')){
+      alert('Debes aceptar nuestros términos y condiciones de uso');
+      return;
+    }
+    $("#formContainer").addClass('d-none');
+    $("#overlayContainer").removeClass('d-none');
+
+    $.ajax({
+        url: "/job",
+        type: "post",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(data)
+    }).done(function (response, textStatus, jqXHR){
+      if (response.success){
+        waitReply(response.hash, function(data){
+          $("#overlayContainer").addClass('d-none');
+          $("#resultContainer").html(data).removeClass('d-none');
+        });
+      }
+    }).fail(function (jqXHR, textStatus, errorThrown){
+      alert('Algo anda mal... vuelve a intentarlo en unos minutos');
     });
 
-    $("button#submit").click(function(){
-      $('.has-error').removeClass('has-error');
-      var data = {
-        bank_id: $('#bankId').val(),
-        document_num: '',
-        user: '',
-        password: ''
-      };
-      data.user = $("#username").val();
-      data.password = $("#password").val();
-      data.document_num = $('#document').val();
-      if (data.user == '' || data.password == '' || !data.password.match(/\d{4}/) || data.document_num == '' || !data.document_num.match(/\d+/)){
-        // if (data.document_num == '' || data.document_num.match(/\d+/)) $("#document").parent('.form-group').addClass('has-error');
-        // if (data.user == '') $("#username").parent('.form-group').addClass('has-error');
-        // if (data.password == '' || data.password.match(/\d{4}/)) $("#password").parent('.form-group').addClass('has-error');
-
-        if (data.user == '' || data.password == '' || data.document_num == ''){
-          alert('Todos los datos son necesarios para continuar');
-        }else if (!data.password.match(/\d{4}/)){
-          alert('La clave debe ser númerica y de 4 dígitos');
-        }else if (!data.document_num.match(/\d+/)){
-          alert('El DNI debe cargarse solo con números');
-        }
-        return;
-      }
-      if (!$("#tyc").is(':checked')){
-        alert('Debes aceptar nuestros términos y condiciones de uso');
-        return;
-      }
-      $("#formContainer").addClass('d-none');
-      $("#overlayContainer").removeClass('d-none');
-
-      $.ajax({
-          url: "/job",
-          type: "post",
-          dataType: "json",
-          contentType: "application/json",
-          data: JSON.stringify(data)
-      }).done(function (response, textStatus, jqXHR){
-        if (response.success){
-          waitReply(response.hash, function(data){
-            $("#overlayContainer").addClass('d-none');
-            $("#resultContainer").html(data).removeClass('d-none');
-          });
-        }
-      }).fail(function (jqXHR, textStatus, errorThrown){
-        alert('Algo anda mal... vuelve a intentarlo en unos minutos');
-      });
-
-    });
-  </script>
+  });
+</script>
 </body>
 
 </html>
