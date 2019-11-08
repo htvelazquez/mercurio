@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php Flight::render("header"); ?>
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php Flight::render("navbar"); ?>
-
-
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -115,9 +110,9 @@
     data.password = $("#password").val();
     data.document_num = $('#document').val();
     if (data.user == '' || data.password == '' || !data.password.match(/\d{4}/) || data.document_num == '' || !data.document_num.match(/\d+/)){
-      // if (data.document_num == '' || data.document_num.match(/\d+/)) $("#document").parent('.form-group').addClass('is-invalid');
-      // if (data.user == '') $("#username").parent('.form-group').addClass('is-invalid');
-      // if (data.password == '' || data.password.match(/\d{4}/)) $("#password").parent('.form-group').addClass('is-invalid');
+      // if (data.document_num == '' || data.document_num.match(/\d+/)) $("#document").addClass('is-invalid');
+      // if (data.user == '') $("#username").addClass('is-invalid');
+      // if (data.password == '' || data.password.match(/\d{4}/)) $("#password").addClass('is-invalid');
 
       if (data.user == '' || data.password == '' || data.document_num == ''){
         alert('Todos los datos son necesarios para continuar');

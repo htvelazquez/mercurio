@@ -2,24 +2,17 @@
 
 	require 'vendor/autoload.php';
 
+	session_start();
+
 	Flight::register('db', 'mysqli', array('localhost','homestead','secret','homestead'));
 
 	$db = Flight::db();
 
 	Flight::route('GET /', function(){
+			checkLogin();
 			$banks = getAllActiveBanks();
 	    Flight::render('home', array('banks' => $banks));
 	});
-
-	function getAllActiveBanks(){
-		$result = Flight::db()->query("SELECT * FROM `banks` WHERE active = 1");
-
-		 $banks = array();
-		 while ($row = $result->fetch_assoc()) {
-				 $banks[] = $row;
-		 }
-		 return $banks;
-	}
 
 	Flight::route('GET /job', function(){
 		$job = Flight::db()->query("SELECT j.id, j.password, j.user, j.document_num, j.document_type, j.hash, b.alias, b.link
@@ -49,6 +42,7 @@
 	});
 
 	Flight::route('POST /job', function(){
+		checkLogin();
 		$data = Flight::request()->data->getData();
 		$data['timestamp'] = 'NOW()';
 
@@ -99,6 +93,7 @@
 	});
 
 	Flight::route('GET /data/@hash', function($hash){
+		checkLogin();
 		$data = Flight::db()->query("SELECT * FROM `jobs_data` WHERE hash = '$hash'")->fetch_assoc();
 
 		if (!empty($data)){
@@ -109,7 +104,35 @@
 	});
 
 	Flight::route('GET /form/@alias', function($alias){
+		checkLogin();
 		Flight::render("forms/$alias");
 	});
+
+	Flight::route('POST /login', function(){
+		$data = Flight::request()->data->getData();
+		if ($data['user'] == 'admin' && $data['password'] == 'cireniodemo123'){
+			$_SESSION['login_user'] = 'admin';
+			return Flight::json(array('success' => true),200);
+		}else{
+			return Flight::json(array('success' => false),200);
+		}
+	});
+
+	function getAllActiveBanks(){
+		$result = Flight::db()->query("SELECT * FROM `banks` WHERE active = 1");
+
+		 $banks = array();
+		 while ($row = $result->fetch_assoc()) {
+				 $banks[] = $row;
+		 }
+		 return $banks;
+	}
+
+	function checkLogin(){
+		if (!isset($_SESSION['login_user'])){
+			Flight::render("forms/login");
+			die;
+		}
+	}
 
 	Flight::start();
