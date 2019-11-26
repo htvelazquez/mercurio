@@ -7795,11 +7795,11 @@ a{
     -webkit-transition:.3s all ease;
     -o-transition:.3s all ease;
     transition:.3s all ease;
-    color:#24bdc9
+    color:#55cbc8
 }
 a:hover{
     text-decoration:none;
-    color:#24bdc9
+    color:#55cbc8
 }
 h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     line-height:1.5;
@@ -7807,7 +7807,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     font-weight:400
 }
 .text-primary{
-    color:#24bdc9!important
+    color:#55cbc8!important
 }
 .ftco-navbar-light{
     background:0 0!important;
@@ -7891,7 +7891,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     color:#fff
 }
 .ftco-navbar-light .navbar-nav>.nav-item.cta.cta-colored span{
-    border-color:#24bdc9
+    border-color:#55cbc8
 }
 .ftco-navbar-light .navbar-nav>.nav-item.active>a{
     color:rgba(255,255,255,.5)
@@ -7916,11 +7916,11 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     box-shadow:0 0 10px 0 rgba(0,0,0,.1)
 }
 .ftco-navbar-light.scrolled .nav-item.active>a{
-    color:#24bdc9!important
+    color:#55cbc8!important
 }
 .ftco-navbar-light.scrolled .nav-item.cta>a{
     color:#fff!important;
-    background:#24bdc9;
+    background:#55cbc8;
     border:none!important;
     padding-top:.5rem!important;
     padding-bottom:.5rem!important;
@@ -7937,7 +7937,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     color:#fff!important
 }
 .ftco-navbar-light.scrolled .nav-item.cta.cta-colored span{
-    border-color:#24bdc9
+    border-color:#55cbc8
 }
 @media(max-width:991.98px){
     .ftco-navbar-light.scrolled .navbar-nav{
@@ -7970,7 +7970,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     color:#3a4348!important
 }
 .ftco-navbar-light.scrolled .nav-link.active{
-    color:#24bdc9!important
+    color:#55cbc8!important
 }
 .ftco-navbar-light.scrolled.awake{
     margin-top:0;
@@ -7997,7 +7997,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     height:100%;
     position:relative;
     z-index:1;
-    height:450px
+    height:630px
 }
 @media(max-width:767.98px){
     .hero-wrap{
@@ -8080,7 +8080,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     border-radius:50%
 }
 .slider-text{
-    height:560px;
+    height:700px;
     position:relative
 }
 @media(max-width:767.98px){
@@ -8146,7 +8146,9 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     display:block
 }
 .slider-text .img{
-    z-index:99
+    z-index:99;
+    opacity: 0.95;
+    width: 50%;
 }
 .slider-text .breadcrumbs{
     text-transform:uppercase;
@@ -8168,7 +8170,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
 .slider-text .btn-primary{
     border:1px solid #fff!important;
     background:#fff!important;
-    color:#24bdc9!important;
+    color:#55cbc8!important;
     -webkit-border-radius:30px;
     -moz-border-radius:30px;
     -ms-border-radius:30px;
@@ -8253,7 +8255,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     z-index:0
 }
 .bg-primary{
-    background:#24bdc9
+    background:#55cbc8
 }
 .btn{
     cursor:pointer;
@@ -8270,21 +8272,21 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
 .btn.btn-primary{
     background:#daf6f8;
     border:2px solid #daf6f8;
-    color:#24bdc9
+    color:#55cbc8
 }
 .btn.btn-primary:hover{
-    border:2px solid #24bdc9;
+    border:2px solid #55cbc8;
     background:0 0;
-    color:#24bdc9
+    color:#55cbc8
 }
 .btn.btn-primary.btn-outline-primary{
-    border:2px solid #24bdc9;
+    border:2px solid #55cbc8;
     background:0 0;
-    color:#24bdc9
+    color:#55cbc8
 }
 .btn.btn-primary.btn-outline-primary:hover{
     border:2px solid transparent;
-    background:#24bdc9;
+    background:#55cbc8;
     color:#fff
 }
 .btn.btn-outline-white{
@@ -8300,7 +8302,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
 .btn.btn-outline-white:hover,.btn.btn-outline-white:focus,.btn.btn-outline-white:active{
     background:#fff;
     border-color:#fff;
-    color:#24bdc9
+    color:#55cbc8
 }
 .domain-form .form-group{
     border:1px solid #9ff0c8;
@@ -8330,7 +8332,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     margin:0 10px
 }
 .domain-price span small{
-    color:#24bdc9
+    color:#55cbc8
 }
 .table{
     text-align:center
@@ -8420,7 +8422,7 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
 }
 .services .icon span{
     font-size:60px;
-    color:#22d47b
+    color:#455267
 }
 .services .media-body h3{
     font-size:20px
@@ -8720,7 +8722,7 @@ textarea.form-control{
     visibility:hidden
 }
 .bg-primary{
-    background:#24bdc9!important
+    background:#55cbc8!important
 }
 .ftco-section .ftco-sub-title{
     font-size:16px;
@@ -8741,7 +8743,7 @@ textarea.form-control{
     font-weight:500;
     font-size:16px;
     margin-bottom:0;
-    color:#24bdc9
+    color:#55cbc8
 }
 .media-custom .media-body .position{
     font-size:13px;
@@ -8764,7 +8766,7 @@ textarea.form-control{
 }
 .ftco-footer{
     font-size:16px;
-    background:#24bdc9;
+    background:#55cbc8;
     padding:2em 0 0
 }
 .ftco-footer .ftco-footer-logo{
@@ -8836,13 +8838,13 @@ textarea.form-control{
     margin:0 10px 10px 0
 }
 .footer-small-nav>li a:hover,.footer-small-nav>li a:focus{
-    color:#24bdc9
+    color:#55cbc8
 }
 .media .ftco-icon{
     width:100px
 }
 .media .ftco-icon span{
-    color:#24bdc9
+    color:#55cbc8
 }
 .ftco-media{
     background:#fff;
@@ -8870,7 +8872,7 @@ textarea.form-control{
 .ftco-media .icon{
     font-size:50px;
     display:block;
-    color:#24bdc9
+    color:#55cbc8
 }
 .ftco-media.text-center .ftco-icon{
     margin:0 auto
@@ -8920,7 +8922,7 @@ textarea.form-control{
     }
 }
 .heading-section .subheading{
-    color:#24bdc9;
+    color:#55cbc8;
     font-size:14px;
     font-size:500;
     display:block;
@@ -9151,7 +9153,7 @@ textarea.form-control{
     display:block;
     font-size:72px;
     font-weight:700;
-    color:#24bdc9
+    color:#55cbc8
 }
 .ftco-counter .ftco-label{
     font-size:12px;
@@ -9199,7 +9201,7 @@ textarea.form-control{
     color:#3a4348
 }
 .blog-entry .text .heading a:hover,.blog-entry .text .heading a:focus,.blog-entry .text .heading a:active{
-    color:#24bdc9
+    color:#55cbc8
 }
 .blog-entry .text .meta-chat{
     color:#9eaab0
@@ -9345,8 +9347,8 @@ textarea.form-control{
 }
 .block-17 form .search-submit{
     width:100%;
-    background:#24bdc9;
-    border:2px solid #24bdc9;
+    background:#55cbc8;
+    border:2px solid #55cbc8;
     color:#fff;
     padding:12px 10px;
     -webkit-border-radius:4px;
@@ -9378,7 +9380,7 @@ textarea.form-control{
     font-weight:400
 }
 .block-27 ul li a,.block-27 ul li span{
-    color:#24bdc9;
+    color:#55cbc8;
     text-align:center;
     display:inline-block;
     width:40px;
@@ -9389,7 +9391,7 @@ textarea.form-control{
 }
 .block-27 ul li.active a,.block-27 ul li.active span{
     background:#84e2e9;
-    color:#24bdc9;
+    color:#55cbc8;
     border:1px solid transparent
 }
 .block-7{
@@ -9413,7 +9415,7 @@ textarea.form-control{
     margin:0;
     padding:0;
     padding:12px 20px;
-    background:#24bdc9;
+    background:#55cbc8;
     margin-bottom:40px;
     color:#fff;
     border-radius:0 0 10px 10px;
@@ -9489,9 +9491,9 @@ textarea.form-control{
     -webkit-transition:.3s all ease;
     -o-transition:.3s all ease;
     transition:.3s all ease;
-    background:#24bdc9;
+    background:#55cbc8;
     color:#fff;
-    border:1px solid #24bdc9
+    border:1px solid #55cbc8
 }
 .block-8 .accordion-item .heading>a[aria-expanded=false]:before{
     content:"\e313";
@@ -9561,7 +9563,7 @@ textarea.form-control{
     transition:.3s all ease
 }
 .block-4 .nonloop .owl-dots .owl-dot.active{
-    background:#24bdc9
+    background:#55cbc8
 }
 .contact-section .contact-info p a{
     color:#515d64
@@ -9588,7 +9590,7 @@ textarea.form-control{
     color:#3a4348
 }
 .block-21 .text .heading a:hover,.block-21 .text .heading a:active,.block-21 .text .heading a:focus{
-    color:#24bdc9
+    color:#55cbc8
 }
 .block-21 .text .meta>div{
     display:inline-block;
@@ -9628,7 +9630,7 @@ textarea.form-control{
     margin:0;
     border-radius:50%!important;
     font-size:16px;
-    background:#24bdc9;
+    background:#55cbc8;
     color:#fff
 }
 .custom-pagination li.active a:hover,.custom-pagination li.active a:focus,.custom-pagination .prev.active a:hover,.custom-pagination .prev.active a:focus,.custom-pagination .next.active a:hover,.custom-pagination .next.active a:focus{
