@@ -29,7 +29,7 @@
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
                     <li class="nav-item"><a href="#products" class="nav-link">Productos</a></li>
                     <li class="nav-item"><a href="#services" class="nav-link">Servicios</a></li>
                     <li class="nav-item cta"><a href="#contact-us" class="nav-link"><span>Contacto</span></a></li>
@@ -101,7 +101,7 @@
                 <div class="col-md-12 nav-link-wrap mb-4 pb-md-4 pb-sm-1 ftco-animate">
                     <div class="nav ftco-animate nav-pills justify-content-center text-center" id="v-hunter-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-hunter-tab" data-toggle="pill" href="#v-hunter" role="tab" aria-controls="v-hunter" aria-selected="true">Leads Hunter</a>
-                        <a class="nav-link" id="v-linkedin-tab" data-toggle="pill" href="#v-linkedin" role="tab" aria-controls="v-linkedin" aria-selected="false">Cirenio LinkedIn Helper</a>
+                        <a class="nav-link" id="v-linkedin-tab" data-toggle="pill" href="#v-linkedin" role="tab" aria-controls="v-linkedin" aria-selected="false">C&P Linkedin Helper</a>
                         <a class="nav-link" id="v-contacts-tab" data-toggle="pill" href="#v-contacts" role="tab" aria-controls="v-contacts" aria-selected="false">Contacts Grabber</a>
                         <a class="nav-link" id="v-tech-tracker-tab" data-toggle="pill" href="#v-tech-tracker" role="tab" aria-controls="v-tech-tracker" aria-selected="false">Web Tech Tracker</a>
                         <a class="nav-link" id="v-europium-tab" data-toggle="pill" href="#v-europium" role="tab" aria-controls="v-europium" aria-selected="false">Europium</a>
@@ -115,11 +115,33 @@
                                     <img src="images/dashboard_full_1.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half ml-md-5 align-self-center">
-                                    <h2 class="mb-4">Leads Hunter</h2>
-                                    <p>Con la ayuda de nuestros analistas podrás generar un perfil de cliente (Costumer Profile) que te ayudará a enforcar tus esfuerzos en el público que te dará los mejores resultados.</p>
-                                    <p>Somos especialistas en <b>Mercados de Nicho</b>, donde cada contacto cuenta.</p>
-                                    <p>A partir del relevamiento personalizdo de las necesidades para tu negocio, sabrás cual es la información que generará el mayor <b>valor agregado</b>.</p>
-                                    <p>Con una clara definición de tus objetivos y la identificación del <b>ICP (Ideal Costumer Profile)</b> tendrás todas las herramientas necesarias para una estrategia de venta orientada a resultados.</p>
+                                    <h2 class="mb-4">Cirenio Leads Hunter</h2>
+
+                                    <p><b>"Cirenio Lead Hunter"</b> obtendrá automaticamente la mayor cantidad actualizada de perfiles que encueadren en los criterios de busqueda que vos elijas</p>
+                                    <p>Los mismos se disponibilizarán por medio de Cirenio Dashboard, CSV o en tu propio CRM</p>
+
+                                    <p>Criterios de búsqueda:
+                                      Contactos
+                                      <ul>
+                                        <li>Seniority
+                                        <li>Title
+                                        <li>Skills
+                                        <li>Localización geográfica
+                                        <li>Keywords
+                                        <li>Idiomas
+                                      </ul>
+                                      Compañías en su experiencia
+                                      <ul>
+                                        <li>Compañías en su experiencia
+                                        <li>Industria
+                                        <li>Tamaño
+                                        <li>Companies
+                                        <li>Localizacion
+                                        <li>Industria
+                                        <li>Annual Revenue
+                                        <li>Tecnologías utilizadas
+                                      </ul>
+                                    <p>
                                 </div>
                             </div>
                         </div>
@@ -130,10 +152,18 @@
                                     <img src="images/dashboard_full_2.jpg" class="img-fluid border" alt="">
                                 </div>
                                 <div class="one-half order-first mr-md-5 align-self-center">
-                                    <h2 class="mb-4">Cirenio LinkedIn Helper</h2>
-                                    <p>A partir del ICP (Ideal Costumer Profile), realizamos uno de los procesos de <b>'Lead Generation'</b> más rápido y preciso del mercado.</p>
-                                    <p>Ejecutamos una búsqueda de exhaustiva de aquellos datos que conforman la completitud del perfil necesario para ejecutar una venta satisfactoriamente.</p>
-                                    <p>Gracias a nuestro complejo sistema de generación de información con valor agregado, podrás enfocarte en lo realmente relevante.</p>
+                                    <h2 class="mb-4">C&P Linkedin Helper</h2>
+                                    <p>Con C&P Helper vas a tener mas tiempo para contactar a tus posibles clientes.</p>
+                                    <p>Con tan solo un clic vas a poder etiquetar y guardar toda la informacion de un perfil en linkedin.</p>
+                                    <p>Podras Visualizar dichos datos en Cirenio Dashboard, Csv o tu propio CRM.</p>
+                                    <p>Source:
+                                      <ul>
+                                        <li>Search in LinkedIn Standard
+                                        <li>LinkedIn Business Plus
+                                        <li>Search in Sales Navigator
+                                        <li>Search in Recruiter
+                                      </ul>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -145,9 +175,9 @@
                                 </div>
                                 <div class="one-half ml-md-5 align-self-center">
                                     <h2 class="mb-4">Contacts Grabber</h2>
-                                    <p>Contamos con un sistema de actualización para bases de datos pre-existentes, basado en la retroalimentación continua.</p>
-                                    <p>Disponibilizamos un avanzado sistema de deteccion y alerta de cambios significativos en la información clave para tu negocio.</p>
-                                    <p>Te ayudamos a detectar el momento justo de abordar a tu público objetivo para obtener los mejores resultados.</p>
+                                    <p>Te ayudará a mantener tu base de datos de contactos actualizada.</p>
+                                    <p>También agregará valor con Data enrichment y alertas ante cambios en determinados eventos como por ejemplo: nuevo skill, nueva posicion, o nuevo idioma, entre otros..</p>
+                                    <p>Estos features te ayudarán a determinar el momento justo para abordar a tu público objetivo y asi obtener mejores resultados.</p>
                                 </div>
                             </div>
                         </div>
@@ -189,14 +219,14 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                        <h2>Contact Us</h2>
-                        <p>Leave us your email address and a representative will contact you shortly</p>
+                        <h2>Contacto</h2>
+                        <p>Déjanos tu e-mail y un representante se comunicará contigo a la brevedad.</p>
                         <div class="row d-flex justify-content-center mt-5">
                             <div class="col-md-6">
                                 <form action="#" class="subscribe-form">
                                     <div class="form-group">
                                         <span class="icon icon-paper-plane"></span>
-                                        <input type="text" class="form-control" placeholder="your@email.com">
+                                        <input type="text" class="form-control" placeholder="tu@email.com">
                                     </div>
                                 </form>
                             </div>
@@ -211,7 +241,7 @@
             <div class="row justify-content-center mb-3 pb-3">
                 <div class="col-md-7 text-center heading-section ftco-animate">
                     <!--span class="subheading">Conocenos</span-->
-                    <h2 class="mb-4">Services</h2>
+                    <h2 class="mb-4">Servicios</h2>
                 </div>
             </div>
             <div class="row">
