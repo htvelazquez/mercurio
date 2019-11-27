@@ -2126,9 +2126,9 @@ a.btn.disabled,fieldset:disabled a.btn{
     border-color:#78d5ef
 }
 .btn-primary:hover{
-    color:#212529;
+/*    color:#212529;
     background-color:#56caeb;
-    border-color:#4ac7ea
+    border-color:#4ac7ea*/
 }
 .btn-primary:focus,.btn-primary.focus{
     -webkit-box-shadow:0 0 0 .2rem rgba(120,213,239,.5);
@@ -8275,9 +8275,9 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5{
     color:#55cbc8
 }
 .btn.btn-primary:hover{
-    border:2px solid #55cbc8;
+/*    border:2px solid #55cbc8;
     background:0 0;
-    color:#55cbc8
+    color:#55cbc8*/
 }
 .btn.btn-primary.btn-outline-primary{
     border:2px solid #55cbc8;

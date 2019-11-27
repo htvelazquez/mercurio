@@ -143,15 +143,33 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                        <span class="subheading">Solicita una prueba</span>
+                        <!-- span class="subheading">Solicita una prueba</span -->
                         <h2>Contacto</h2>
-                        <p>Déjanos tu e-mail y un representante se comunicará contigo a la brevedad.</p>
+                        <p>Dejanos tus datos y un representante se comunicará a la brevedad.</p>
                         <div class="row d-flex justify-content-center mt-5">
-                            <div class="col-md-6">
-                                <form action="#" class="subscribe-form">
+                            <div class="col-md-8">
+                                <form id="contactForm" action="contact" class="subscribe-form">
+                                    <div id="formSuccess" class="alert alert-success d-none">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>Genial!</strong> Ya registramos tu e-mail.
+                                    </div>
+                                    <div id="formFail" class="alert alert-warning d-none">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        Tuvimos un problema para registrarte, intenta nuevamente.
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <span class="icon icon-user"></span>
+                                        <input name="name" type="text" class="form-control" placeholder="Tu Nombre">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <span class="icon icon-envelope"></span>
+                                        <input name="email" type="email" class="form-control" placeholder="tu@email">
+                                    </div>
+
                                     <div class="form-group">
-                                        <span class="icon icon-paper-plane"></span>
-                                        <input type="text" class="form-control" placeholder="tu@email.com">
+                                      <input type="submit" value="Enviar" class="btn btn-primary py-3 px-5">
                                     </div>
                                 </form>
                             </div>
@@ -177,7 +195,7 @@
                             <div class="icon"><span class="flaticon-money"></span></div>
                         </div>
                         <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Prestamos personales</h3>
+                            <h3 class="heading">Préstamos personales</h3>
                             <p>Obtené mejores rendimientos flexibilizando límites y tasas acorde a las posibilidades reales de cada cliente.</p>
                         </div>
                     </div>
@@ -239,22 +257,41 @@
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
         </svg>
     </div>
-    <script src="views/js/jquery.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/jquery-migrate-3.0.1.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/popper.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/bootstrap.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/jquery.easing.1.3.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/jquery.waypoints.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/jquery.stellar.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/owl.carousel.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/jquery.magnific-popup.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/aos.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/jquery.animateNumber.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/scrollax.min.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/google-map.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
-    <script src="views/js/main.js" type="dc5be274a79aa330cd99d5a3-text/javascript"></script>
+    <script src="views/js/jquery.min.js" type="text/javascript"></script>
+    <script src="views/js/jquery-migrate-3.0.1.min.js" type="text/javascript"></script>
+    <script src="views/js/popper.min.js" type="text/javascript"></script>
+    <script src="views/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--script src="views/js/jquery.easing.1.3.js" type="text/javascript"></script-->
+    <script src="views/js/jquery.waypoints.min.js" type="text/javascript"></script>
+    <script src="views/js/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="views/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="views/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="views/js/aos.js" type="text/javascript"></script>
+    <!--script src="views/js/jquery.animateNumber.min.js" type="text/javascript"></script-->
+    <script src="views/js/scrollax.min.js" type="text/javascript"></script>
+    <!--script src="views/js/google-map.js" type="text/javascript"></script-->
+    <script src="views/js/main.js" type="text/javascript"></script>
 
-    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="dc5be274a79aa330cd99d5a3-|49" defer=""></script>
+    <script type="text/javascript">
+          $('#contactForm').submit( function(e) {
+              $("#formSuccess, #formFail").addClass('d-none');
+              e.preventDefault();
+              $.ajax( {
+                  type: "POST",
+                  url: $(this).attr('action'),
+                  data: $(this).serialize(),
+                  success: function( response ) {
+                      console.log( response );
+                      $("#formSuccess").removeClass('d-none');
+                      $('#contactForm').trigger("reset");
+                  },
+                  error: function() {
+                      $("#formFail").removeClass('d-none');
+                  }
+              });
+              return false;
+          });
+    </script>
 </body>
 
 </html>
