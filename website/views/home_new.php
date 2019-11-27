@@ -160,12 +160,12 @@
 
                                     <div class="form-group mb-3">
                                         <span class="icon icon-user"></span>
-                                        <input name="name" type="text" class="form-control" placeholder="Tu Nombre">
+                                        <input name="name" required type="text" class="form-control" placeholder="Tu Nombre">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <span class="icon icon-envelope"></span>
-                                        <input name="email" type="email" class="form-control" placeholder="tu@email">
+                                        <input name="email" required type="email" class="form-control" placeholder="tu@email">
                                     </div>
 
                                     <div class="form-group">
@@ -206,7 +206,7 @@
                             <div class="icon"><span class="flaticon-documents"></span></div>
                         </div>
                         <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Garantías</h3>
+                            <h3 class="heading">Garantía</h3>
                             <p>Verificá el respaldo y la posibilidad de pago de tus clientes.</p>
                         </div>
                     </div>
@@ -239,6 +239,8 @@
                       <li class="ftco-animate"><a href="https://twitter.com/cirenio_ar" target="_blank"><span class="icon-twitter"></span></a></li>
                       <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCnRFqPsAErXIZySWKdZQBMQ" target="_blank"><span class="icon-youtube"></span></a></li>
                       <li class="ftco-animate"><a href="https://www.instagram.com/cirenio_ar" target="_blank"><span class="icon-instagram"></span></a></li>
+                      <li class="ftco-animate"><a href="https://www.linkedin.com/company/cirenio/about/" target="_blank"><span class="icon-linkedin"></span></a></li>
+
                   </ul>
                 </div>
             </div>
@@ -261,7 +263,7 @@
     <script src="views/js/jquery-migrate-3.0.1.min.js" type="text/javascript"></script>
     <script src="views/js/popper.min.js" type="text/javascript"></script>
     <script src="views/js/bootstrap.min.js" type="text/javascript"></script>
-    <!--script src="views/js/jquery.easing.1.3.js" type="text/javascript"></script-->
+    <script src="views/js/jquery.easing.1.3.js" type="text/javascript"></script>
     <script src="views/js/jquery.waypoints.min.js" type="text/javascript"></script>
     <script src="views/js/jquery.stellar.min.js" type="text/javascript"></script>
     <script src="views/js/owl.carousel.min.js" type="text/javascript"></script>
