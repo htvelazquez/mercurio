@@ -1,0 +1,22 @@
+.navbar-cirenio {
+  background-color: #55CBC8;
+  height: 60px;
+}
+
+.navbar-cirenio .brand-link {
+  font-family: poppins,Arial,sans-serif;
+  padding: 0;
+  width: auto;
+  color: #FFF;
+  text-align: right;
+  font-weight: 500;
+  font-size: 40px;
+  text-transform: uppercase;
+  right: 0;
+}
+
+.cirenio-footer a {
+  font-family: poppins,Arial,sans-serif;
+  color: #55CBC8;
+  font-weight: 500;
+}
