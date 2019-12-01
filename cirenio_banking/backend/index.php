@@ -75,8 +75,10 @@
 	});
 
 	Flight::route('POST /data/@hash', function($hash){
-		$data = Flight::request()->data->getData();
-		$json = json_encode($data);
+		// $data = Flight::request()->data->getData();
+		// $json = json_encode($data);
+		$json = '{"cajas":[{"id":"******9468","alias":"MAYO.TIERRA.AGOSTO","cbu":"15000459-00007361694682","currency":"ARS","balance":"0,26"},{"id":"******4174","alias":"CLAVEL.TRIBU.PASTA","cbu":"15006235-00062380941746","currency":"USD","balance":"0,00"}],"cuentas":[{"id":"******0054","currency":"ARS","alias":"PUMA.LICOR.GENIO","cbu":"15006235-00062332500546","balance":"0,00","limit":"15.000,00"}],"tarjetas":[{"id":"**** **** **** 6600","type":"Visa","limit":{"amount":"128000.00","currency":"ARS"},"available":{"amount":"18022.50","currency":"ARS"}},{"id":"**** **** **** 8876","type":"American Express","limit":{"amount":"64000.00","currency":"ARS"},"available":{"amount":"29200.00","currency":"ARS"}},{"id":"**** **** **** 6417","type":"Mastercard","limit":{"amount":"104000.00","currency":"ARS"},"available":{"amount":"101720.00","currency":"ARS"}},{"id":"**** **** **** 0571","type":"Visa","limit":null,"available":null},{"id":"**** **** **** 7881","type":"Mastercard","limit":null,"available":null}],"prestamos":[]}';
+
 		$sql = "INSERT INTO `jobs_data` (`hash`, `data`) VALUES ('$hash', '$json')";
 
 		try {

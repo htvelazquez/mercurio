@@ -1,5 +1,5 @@
 <?php Flight::render("header"); ?>
-
+<?php Flight::render("admin-scripts"); ?>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php Flight::render("navbar"); ?>
@@ -65,8 +65,6 @@
   <?php Flight::render("footer"); ?>
 </div>
 <!-- ./wrapper -->
-
-<?php Flight::render("admin-scripts"); ?>
 
 <script type="text/javascript">
   function waitReply(hash,callback) {
