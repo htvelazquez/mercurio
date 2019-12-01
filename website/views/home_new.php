@@ -68,7 +68,7 @@
           <div class="slider-text d-md-flex align-items-center" data-scrollax-parent="true">
               <div class="one-forth pr-md-4 ftco-animate align-self-md-center" data-scrollax=" properties: { translateY: '70%' }">
                   <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Verificá solvencia al instante</h1>
-                  <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Servicio único que permite acceder a información de identidad, saldos y transacciones desde la cuenta bancaria de tus usuarios.</p>
+                  <p class="mb-md-5 mb-sm-3" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Servicio único que te permite acceder a información de identidad, saldos y transacciones desde la cuenta bancaria de tus clientes.</p>
                   <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#contact-us" class="btn btn-primary px-4 py-3">Solicitá una prueba</a></p>
               </div>
               <div class="one-half align-self-sm-center">
@@ -132,6 +132,7 @@
                         <!-- span class="subheading">Solicita una prueba</span -->
                         <h2>Contacto</h2>
                         <p>Dejanos tus datos y un representante se comunicará a la brevedad.</p>
+                        <p>O envianos un email a hernan<b>@</b>cirenio.com</p>
                         <div class="row d-flex justify-content-center mt-5">
                             <div class="col-md-8">
                                 <form id="contactForm" action="contact" class="subscribe-form">
@@ -193,7 +194,7 @@
                         </div>
                         <div class="media-body p-2 mt-3">
                             <h3 class="heading">Rápido</h3>
-                            <p>Validá la identidad y accedé a los datos transaccionales de tu cliente en menos de 10 minutos, completamente on-line y automatizado.</p>
+                            <p>Validá la identidad y accedé a los datos transaccionales de tus clientes en menos de 10 minutos, completamente on-line y automatizado.</p>
                         </div>
                     </div>
                 </div>
@@ -239,7 +240,7 @@
                         </div>
                         <div class="media-body p-2 mt-3">
                             <h3 class="heading">Completo</h3>
-                            <p>Conseguí un informe 360 del estado financiero de tu cliente, información real y actualizada.</p>
+                            <p>Conseguí un informe 360 del estado financiero de tus clientes, información real y actualizada.</p>
                         </div>
                     </div>
                 </div>
