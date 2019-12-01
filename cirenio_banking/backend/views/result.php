@@ -1,3 +1,73 @@
+<div class="card card-outline card-primary">
+  <div class="card-header">
+    <h3 class="card-title">Información Personal</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+      </button>
+    </div>
+    <!-- /.card-tools -->
+  </div>
+  <div class="card-body box-profile">
+    <h3 class="profile-username text-center">Fernando Mauricio Monzon</h3>
+
+    <p class="text-muted text-center">Banco HSBC</p>
+
+    <ul class="list-group list-group-unbordered mb-3">
+      <li class="list-group-item">
+        <b>CUIL</b> <a class="float-right">20-36611173-6</a>
+      </li>
+      <li class="list-group-item">
+        <b>Sucursal</b> <a class="float-right">253 San Nicolás, Capital Federal</a>
+      </li>
+      <li class="list-group-item">
+        <b>Paquete</b> <a class="float-right">Premier</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /.card-body -->
+</div>
+
+<div class="card card-outline card-primary">
+  <div class="card-header">
+    <h3 class="card-title">Balance anual</h3>
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+      </button>
+    </div>
+    <!-- /.card-tools -->
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body pt-2">
+    <div class="d-flex">
+      <p class="d-flex flex-column">
+        <span class="text-bold text-lg">%27 de excedente mensual</span>
+        <span>Ingresos/Egresos</span>
+      </p>
+      <p class="ml-auto d-flex flex-column text-right">
+        <span class="text-success">
+          <i class="fas fa-arrow-up"></i> 12.5%
+        </span>
+        <span class="text-muted">Los ultimos 3 meses</span>
+      </p>
+    </div>
+    <!-- /.d-flex -->
+
+    <div class="position-relative mb-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <canvas id="income-chart" height="400" width="1304" class="chartjs-render-monitor" style="display: block; height: 200px; width: 652px;"></canvas>
+    </div>
+
+    <div class="d-flex flex-row justify-content-end">
+      <span class="mr-2">
+        <i class="fas fa-square text-success"></i> Ingresos
+      </span>
+
+      <span>
+        <i class="fas fa-square text-danger"></i> Egresos
+      </span>
+    </div>
+  </div>
+</div>
+
 <?php if (!empty($data->tarjetas)) { ?>
     <div class="card card-outline card-primary">
       <div class="card-header">
@@ -154,7 +224,7 @@
       <h3 class="card-title">Préstamos</h3>
 
       <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
+        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
         </button>
       </div>
       <!-- /.card-tools -->
@@ -190,3 +260,82 @@
   </div>
   <!-- /.card -->
 <?php } ?>
+
+<script type="text/javascript">
+  $(function () {
+    'use strict'
+
+    var ticksStyle = {
+      fontColor: '#495057',
+      fontStyle: 'bold'
+    }
+
+    var mode      = 'index'
+    var intersect = true
+
+    var $visitorsChart = $('#income-chart')
+    var visitorsChart  = new Chart($visitorsChart, {
+      data   : {
+        labels  : ['Dic', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov'],
+        datasets: [{
+          type                : 'line',
+          data                : [50750, 35000, 42000, 42000, 42000, 42000, 42000, 76125, 53500, 52500, 52500, 65100],
+          backgroundColor     : 'transparent',
+          borderColor         : '#67AB81',
+          pointBorderColor    : '#67AB81',
+          pointBackgroundColor: '#67AB81',
+          fill                : false
+          // pointHoverBackgroundColor: '#67AB81',
+          // pointHoverBorderColor    : '#67AB81'
+        },
+        {
+          type                : 'line',
+          data                : [45150, 21450, 23504, 31042, 44315, 43900, 42000, 72125, 42760, 38500, 41175, 43128],
+          backgroundColor     : 'tansparent',
+          borderColor         : '#DE7777',
+          pointBorderColor    : '#DE7777',
+          pointBackgroundColor: '#DE7777',
+          fill                : false
+          // pointHoverBackgroundColor: '#DE7777',
+          // pointHoverBorderColor    : '#DE7777'
+        }]
+      },
+      options: {
+        maintainAspectRatio: false,
+        tooltips           : {
+          mode     : mode,
+          intersect: intersect
+        },
+        hover              : {
+          mode     : mode,
+          intersect: intersect
+        },
+        legend             : {
+          display: false
+        },
+        scales             : {
+          yAxes: [{
+            // display: false,
+            gridLines: {
+              display      : true,
+              lineWidth    : '4px',
+              color        : 'rgba(0, 0, 0, .2)',
+              zeroLineColor: 'transparent'
+            },
+            ticks    : $.extend({
+              beginAtZero : true,
+              suggestedMax: 200
+            }, ticksStyle)
+          }],
+          xAxes: [{
+            display  : true,
+            gridLines: {
+              display: false
+            },
+            ticks    : ticksStyle
+          }]
+        }
+      }
+    })
+  })
+</script>
