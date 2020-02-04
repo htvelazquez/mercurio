@@ -78,6 +78,17 @@
         </div>
     </div>
 
+    <section id="video" class="ftco-section">
+        <div class="container">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SltcxqwZgWY?controls=0" allowfullscreen></iframe>
+            </div>
+            <!--div class="row justify-content-center mb-3 pb-3">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SltcxqwZgWY?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div-->
+        </div>
+    </section>
+
     <section id="casos" class="ftco-section services-section">
         <div class="container">
             <div class="row justify-content-center mb-3 pb-3">
